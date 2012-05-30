@@ -3,5 +3,6 @@
 if [[ -n "$1" && "$1" == "..." ]]; then
     git commit -am 'Submodule updates.'
 else
-    git submodule foreach ${@:-git status}
+    git submodule foreach ${@:-git status} |
+        sed "s/Entering '\\(.*\\)'/Entering '\\o33[01;34m\\1\\o33[0m'/"
 fi
