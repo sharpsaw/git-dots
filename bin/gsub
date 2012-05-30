@@ -1,0 +1,7 @@
+#!/bin/bash -xe
+[ -e .gitmodules ]
+if [[ -n "$1" && "$1" == "..." ]]; then
+    git commit -am 'Submodule updates.'
+else
+    git submodule foreach git status
+fi
