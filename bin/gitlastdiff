@@ -1,0 +1,3 @@
+#!/bin/sh
+# Show the diff to the previous revision.
+git show -1 -- "$@" | vim-pager

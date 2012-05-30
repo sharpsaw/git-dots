@@ -1,0 +1,29 @@
+[push]
+    default = current
+
+[alias]
+    br = branch
+    ci = commit -v
+    co = checkout
+    dc = diff --cached
+    df = diff
+    di = diff
+    # Show files ignored by git:
+    ign = ls-files -o -i --exclude-standard
+    lg = log -p
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    ls = ls-files
+    st = status
+    w = whatchanged
+
+[color]
+    ui = auto
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    pager = true
+[user]
+	email = you@example.com
+	name = Your Name

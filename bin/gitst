@@ -1,0 +1,3 @@
+#!/bin/sh
+# Simple git status.
+git status

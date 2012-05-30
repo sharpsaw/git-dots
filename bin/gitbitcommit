@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+$VERBOSE = true
+`git status --porcelain`.split("\n").each do |line|
+    file = line.split(/\s+/)[-1]
+    system 'git', 'commit', '-v', file
+end
