@@ -1,0 +1,3 @@
+#!/bin/sh -xe
+## OK, this one's lazy. It saves you a space versus `ga .`.
+git add . "$@"
