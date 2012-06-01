@@ -20,3 +20,6 @@ map <Leader>gfb :!gitblame <cword><cr>
 map <Leader>gfl :!gitlog <cword><cr>
 map <Leader>gfci :!git commit -v <cword><cr>
 map <Leader>gfREVERT :!git checkout -- <cword><cr>
+
+" Fix poor detection:
+au BufRead *.git/*/COMMIT_EDITMSG set ft=gitcommit
