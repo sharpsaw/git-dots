@@ -24,6 +24,3 @@
     branch = auto
     interactive = auto
     pager = true
-[user]
-	email = you@example.com
-	name = Your Name
