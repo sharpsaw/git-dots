@@ -1,2 +1,2 @@
 #!/bin/sh
-git commit -v -a -m "$@"
+gcia -m "`_git-dots_read-msg "$@"`"
