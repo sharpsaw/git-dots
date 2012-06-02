@@ -8,7 +8,7 @@ Soon to have more, too.
 Context
 -------
 
-Why "-dots"?  See: http://github.com/ouicode/rkingy-dots
+Why "-dots"?  See: http://github.com/ouicode/rkingy-dots-conf
 
 TODO
 ----
