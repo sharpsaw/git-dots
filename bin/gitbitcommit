@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# TODO: Remove ruby dep (for impoverished sysems)
 $VERBOSE = true
 `git status --porcelain`.split("\n").each do |line|
     file = line.split(/\s+/)[-1]
