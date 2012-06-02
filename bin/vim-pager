@@ -1,0 +1,18 @@
+#!/bin/sh
+# Use vim like "less". Makes "space" page downwards and Ctrl+c quit.
+
+if [ -z "$STAYOPEN" ]; then
+    EXTRA_COMMANDS='redraw|if (&lines - 3) > line("$")|echo "# Quick-quit enabled. Maybe set env var STAYOPEN=1 ?"|q|end'
+else
+    EXTRA_COMMANDS=':'
+fi
+
+vim - \
+    +'map <space> <c-d>' \
+    +'map <c-c> :q<enter>' \
+    +'map gf :sp <cword><cr>' \
+    +'set iskeyword+=. iskeyword+=/' \
+    +"set includeexpr=substitute(v:fname,'^[ab]/','','')" \
+    +'set nomod t_ti= t_te=' \
+    +"$EXTRA_COMMANDS" \
+    "$@"
