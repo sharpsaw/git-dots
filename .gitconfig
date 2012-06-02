@@ -24,3 +24,5 @@
     branch = auto
     interactive = auto
     pager = true
+[core]
+	excludesfile = /home/rking/.gitignore_global
