@@ -1,2 +1,2 @@
 #!/bin/sh
-gdc | vim - "$@"
+gdc "$@" | vim-pager
