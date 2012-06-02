@@ -1,0 +1,15 @@
+gccd() { ## git clone then cd.
+    git clone "$@"
+    local dir=`echo "$1" | sed '
+        s/\/$//
+        s/\.git$//
+        s/.*\///'`
+    if [ -d $dir ]; then
+        echo "cd $dir"
+        cd $dir
+    else
+        echo "Oops. I (gccd) guessed '$dir' from '$1', but that dir is absent."
+        echo "(Either something happened with the clone or it was a bad guess)"
+    fi
+}
+# vim:ft=sh
