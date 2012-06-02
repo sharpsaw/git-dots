@@ -1,0 +1,10 @@
+#!/bin/sh -xe
+hihi=`bin/_git-dots_read-msg "hihi"`
+[ "hihi" = $hihi ]
+
+nini=`echo nini | bin/_git-dots_read-msg`
+echo $nini
+[ "nini" = $nini ]
+
+nono=`echo | bin/_git-dots_read-msg`
+[ "" = "$nono" ]
