@@ -1,0 +1,25 @@
+# TODO - Make zsh-git-prompt a plain old ... repo. (move it from ~/)
+if [[ -e ~/.zsh-git-prompt ]]; then
+    local expected_gitdotsdir=~/.../src/git-dots
+    if [[ -d $expected_gitdotsdir/bin ]]; then
+        source ~/.zsh-git-prompt
+        PROMPT='$(git_super_status)%# '
+        RPROMPT='%B%m%~%b'
+
+        git_cache_invalidators=git\ `cd $expected_gitdotsdir/bin; echo *`
+        ## Override the actual function from zsh-git-prompt -
+        function preexec_update_git_vars() {
+            for n in `echo $git_cache_invalidators`; do
+                [[ "$2" == "$n" ]] &&
+                    __EXECUTED_GIT_COMMAND=1
+            done
+        }
+    else
+        [[ $PREEXEC_HUSHUP != 1 ]] &&
+            echo "No bin/ dir in $expected_gitdotsdir; Odd."
+        export PREEXEC_HUSHUP=1
+    fi
+else
+    echo "https://github.com/olivierverdier/zsh-git-prompt needed."
+fi
+# set ft=zsh
