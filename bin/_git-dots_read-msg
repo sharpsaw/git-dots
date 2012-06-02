@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ -n "$*" ]; then
+    msg="$@"
+else
+    echo -n "Commit message: " > /dev/tty
+    read msg
+fi
+echo "$msg"
