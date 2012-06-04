@@ -1,3 +1,2 @@
-#!/bin/sh
-# Diff + pager
+#!/bin/sh -x
 git diff "$@" | vim-pager

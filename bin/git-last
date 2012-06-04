@@ -1,10 +1,5 @@
 #!/bin/bash
-#
-# git-last
-#
-# Shows the most recent commit for each file/folder in the current directory,
-# similar to GitHub's code-browser. Accepts a list of files or directories to be
-# examined.
+## Shows the most recent commit for each file/folder in the current directory, similar to GitHub's code-browser. Accepts a list of files or directories to be examined.
 #
 # Copyright 2012 Eugene E. Kashpureff Jr (eugene@kashpureff.org)
 # License: WTFPL, any version or GNU General Public License, version 3+
@@ -14,27 +9,13 @@
 ## Documentation
 ##
 
-## Installation
-#
-# To install git-last, copy this file to somewhere in your PATH. It is suggested
-# to use ~/bin/. If this directory does not exist, create it. If it is not in
-# your PATH you will need to add it. Consult your shell's documentation for the
-# exact method to accomplish this, but the following works in bash:
-#
-# PATH+=":~/bin"
-#
-# This file should be named "git-last" when installed, NOT "git-last.sh". If you
-# do this wrong then git will be very angry with you and invoking 'git last'
-# will not work.
-#
-
 ## Usage
 #
 # To use git-last, simply run 'git last'. The output should look something like:
 #
 # [eugene@francisdrake it-vends (dev)]$ git last
 # CHANGELOG.txt:  7 weeks ago     c97cca0 v1.2.0 [Eugene E. Kashpureff Jr]
-# common.php:     7 weeks ago     19fd9f7 Increase rate of special items to 10% 
+# common.php:     7 weeks ago     19fd9f7 Increase rate of special items to 10%
 # css/:           7 weeks ago     8b529a0 Code Style improvements [Eugene E. Kas
 # favicon.ico:    6 months ago    190fdb3 Add favicon, care of sannse. [Eugene E
 # .htaccess:      7 weeks ago     cd72b17 Merge 'dev' into 'vending' for 1.2.0 r
@@ -90,11 +71,11 @@ function git_last() {
 	do
 		# Show path/filename, padded
 		echo -ne ${name}":" | sed -e :a -e "s/^.\{1,${length}\}$/& /;ta"
-		
+
 		# Show last commit info
 		echo "$(git log -1 --pretty=tformat:"${format}" -- ${name})"
 	done
-	
+
 	# Return cleanly
 	return 0
 }
@@ -161,7 +142,7 @@ for name in ${names[@]}
 do
 	# Skip .git dirs(TODO: make this work better)
 	if [ "${name}" == "./.git/" ]
-	then	
+	then
 		continue
 	fi
 	items+=($(echo ${name} | sed 's/\.\///g'))

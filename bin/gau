@@ -1,2 +1,2 @@
-#!/bin/sh
-ga -u "$@"
+#!/bin/sh -x
+git add -u "$@"

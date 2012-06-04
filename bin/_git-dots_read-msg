@@ -1,4 +1,5 @@
 #!/bin/sh
+## Internal tool to default message form args, or else stdin. (The stdin method is nice because you don't have to type the outer quotes and you don't get interpolation.)
 if [ -n "$*" ]; then
     msg="$@"
 else

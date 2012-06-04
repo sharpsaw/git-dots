@@ -1,2 +1,2 @@
-#!/bin/sh
-gd --cached "$@"
+#!/bin/sh -x
+git diff --cached "$@"

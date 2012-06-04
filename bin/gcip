@@ -1,3 +1,2 @@
-#!/bin/sh -xe
-gci
-gpu
+#!/bin/sh -x
+gci "$@" && git push

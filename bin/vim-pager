@@ -1,8 +1,8 @@
 #!/bin/sh
-# Use vim like "less". Makes "space" page downwards and Ctrl+c quit.
+## Use vim like "less". Makes "space" page downwards and Ctrl+c quit, plus more.
 
 if [ -z "$STAYOPEN" ]; then
-    EXTRA_COMMANDS='redraw|if (&lines - 3) > line("$")|echo "# Quick-quit enabled. Maybe set env var STAYOPEN=1 ?"|q|end'
+    EXTRA_COMMANDS='redraw|if (&lines - 3) > line("$")|echo "# Quick-quit enabled. Maybe override by setting env var STAYOPEN=1 ?"|q|end'
 else
     EXTRA_COMMANDS=':'
 fi

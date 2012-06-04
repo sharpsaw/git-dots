@@ -1,3 +1,2 @@
-#!/bin/sh -xe
-gciam "$@"
-gpu
+#!/bin/sh -x
+git commit -a -m "`_git-dots_read-msg "$@"`" && git push

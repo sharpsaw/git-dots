@@ -1,3 +1,2 @@
-#!/bin/sh -xe
-ga.
-gcimp "$@"
+#!/bin/sh -x
+ga. && gcimp "$@"

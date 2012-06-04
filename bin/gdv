@@ -1,2 +1,2 @@
-#!/bin/sh
-gd "$@" | vim-pager
+#!/bin/sh -x
+git diff "$@" | vim-pager

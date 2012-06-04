@@ -1,3 +1,2 @@
-#!/bin/sh
-# Check the blame logs to see who/what went wrong.
+#!/bin/sh -x
 git blame "$@" | vim-pager

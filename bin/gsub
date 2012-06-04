@@ -1,4 +1,5 @@
-#!/bin/bash -xe
+#!/bin/bash -x
+## Submodule tools - If arg is "..." then commit saying "Submodule updates.", otherwise run args as a command foreach submodule, and default to "git status".
 [ -e .gitmodules ]
 if [[ -n "$1" && "$1" == "..." ]]; then
     git commit -am 'Submodule updates.'

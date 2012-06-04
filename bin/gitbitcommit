@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+## A nice process for committing per-file messages.
 # TODO: Remove ruby dep (for impoverished sysems)
 $VERBOSE = true
 `git status --porcelain`.split("\n").each do |line|

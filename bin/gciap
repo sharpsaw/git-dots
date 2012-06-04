@@ -1,3 +1,2 @@
-#!/bin/sh -xe
-gcia "$@"
-gpu
+#!/bin/sh -x
+gcia "$@" && git push
