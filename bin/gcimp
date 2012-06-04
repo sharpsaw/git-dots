@@ -1,2 +1,2 @@
-#!/bin/sh -x
-gcim && git push
+#!/bin/sh
+gcim "$@" && git push

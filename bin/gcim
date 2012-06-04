@@ -1,2 +1,5 @@
 #!/bin/sh -x
-git commit -v -m "`_git-dots_read-msg "$@"`"
+## git commit -a -m
+MSG="`_git-dots_read-msg "$@"`"
+set -x
+git commit -m "$MSG"
