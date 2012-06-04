@@ -1,5 +1,6 @@
-#!/bin/sh -x
+#!/bin/sh
 ## git commit -a -m && git push
+gst; gd
 MSG="`_git-dots_read-msg "$@"`"
 set -x
 git commit -a -m "$MSG" && git push
