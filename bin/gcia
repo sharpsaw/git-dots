@@ -1,2 +1,2 @@
 #!/bin/sh -x
-git commit -a "$@"
+git commit -v -a "$@"
