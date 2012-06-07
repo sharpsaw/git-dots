@@ -10,7 +10,9 @@ jjV}k!bin-docs
 -->
 *         ga (git add "$@")
 *        ga. (OK, this one's lazy. It saves you a space versus `ga .`.)
+*      ga.ci (ga. && gci "$@")
 *    ga.cimp (ga. && gcimp "$@")
+*     ga.cip (ga. && gcip "$@")
 *        gau (git add -u "$@")
 *        gbr (git branch "$@")
 *     gchamp (More aggressive than `gciamp` - does a `git add .` first.)
