@@ -1,3 +1,4 @@
+#!/bin/zsh
 local expected_zshgitprompt=~/.../src/zsh-git-prompt
 if [[ ! -e $expected_zshgitprompt ]]; then
     echo "$expected_zshgitprompt empty."
