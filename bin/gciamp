@@ -1,6 +1,8 @@
-#!/bin/sh
-## git commit -a -m && git push
-gst; gdc
+#!/bin/sh -e
+## The "g-champ" - a nice choice when committing. Acts like: git add . && git commit -m "$@" && git push
+git add .
+gstq
+gdc
 MSG="`_git-dots_read-msg "$@"`"
 set -x
 git commit -a -m "$MSG" && git push
