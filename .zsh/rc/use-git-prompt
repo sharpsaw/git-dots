@@ -18,7 +18,7 @@ PROMPT='$(git_super_status)%{$fg[cyan]%}%B%#%b%{${reset_color}%} '
 RPROMPT='%{$fg[cyan]%}%~%b@%{$fg[red]%}%B%m'
 
 ## Override the actual function from zsh-git-prompt -
-git_cache_invalidators=git\ `cd $expected_gitdotsdir/bin; echo *`
+git_cache_invalidators=git\ vim\ `cd $expected_gitdotsdir/bin; echo *`
 function preexec_update_git_vars() {
     for n in `echo $git_cache_invalidators`; do
         [[ "$2" == "$n" ]] &&
