@@ -1,0 +1,8 @@
+#!/bin/sh
+if type hub >/dev/null 2>&1; then
+    alias git=hub
+else
+    if [ -n "$WANT_ALL" ]; then
+        echo "Missing \`hub\`. Consider: gem install hub"
+    fi
+fi
