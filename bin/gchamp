@@ -1,6 +1,6 @@
 #!/bin/sh -e
 ## More aggressive than `gciamp` - does a `git add .` first.
-git add .
+ga.
 gstq
 gdc
 MSG="`_git-dots_read-msg "$@"`"
