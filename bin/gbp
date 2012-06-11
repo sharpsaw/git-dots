@@ -1,0 +1,3 @@
+#!/bin/sh -xe
+## gitbitcommit then push — because it's time to make those £'s!
+gitbitcommit "$@" && gp
