@@ -2,9 +2,12 @@
 ## A nice process for committing per-file messages.
 # TODO: Remove ruby dep (for impoverished sysems)
 $VERBOSE = true
+def run cmd
+  p cmd
+  system *cmd or fail "#{cmd.inspect} failed."
+end
+run %w(git add .)
 `git status --porcelain`.split("\n").each do |line|
     file = line.split(/\s+/)[-1]
-    cmd = [ 'git', 'commit', '-v', file ]
-    p cmd
-    system *cmd or fail "#{cmd.inspect} failed."
+    run [ 'git', 'commit', '-v', file ]
 end
