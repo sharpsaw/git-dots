@@ -24,5 +24,10 @@
     branch = auto
     interactive = auto
     pager = true
+
+[color "diff"]
+    new = green
+    old = yellow
+
 [core]
-	excludesfile = /home/rking/.gitignore_global
+    excludesfile = ~/.gitignore_global
