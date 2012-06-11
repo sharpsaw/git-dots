@@ -4,5 +4,7 @@
 $VERBOSE = true
 `git status --porcelain`.split("\n").each do |line|
     file = line.split(/\s+/)[-1]
-    system 'git', 'commit', '-v', file
+    cmd = [ 'git', 'commit', '-v', file ]
+    p cmd
+    system *cmd or fail "#{cmd.inspect} failed."
 end
