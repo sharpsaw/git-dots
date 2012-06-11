@@ -1,0 +1,4 @@
+#!/bin/sh -xe
+## Like `gchamp` but use editor instead of one-line read.
+git add .
+git commit -va && git push
