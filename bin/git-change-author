@@ -1,0 +1,27 @@
+#!/bin/bash -e
+## Read name/email into ~/.gitauthor, which is sourced by ~/.sh/init-git-vars
+OUT=$HOME/.gitauthor
+
+if [ -e $OUT ]; then
+    cat $OUT
+    echo -e "\e[34m(↑ previous $OUT)\e[0m"
+fi
+
+read -p "[32mNew author name[0m: " name
+read -p "[32mNew author email[0m: " email
+
+cat > $OUT <<EOT
+#!/bin/sh -xe
+export GIT_AUTHOR_NAME="$name"
+export GIT_AUTHOR_EMAIL="$email"
+export GIT_COMMITTER_NAME="\$GIT_AUTHOR_EMAIL"
+export GIT_COMMITTER_EMAIL="\$GIT_AUTHOR_AUTHOR"
+EOT
+
+echo
+cat $OUT
+echo -e "\e[34m↑ Saved to $OUT\e[0m"
+
+if [[ $1 != '-q' ]]; then
+    echo -e "\n\e[34;1mNow do:\e[0m exec $SHELLNAME"
+fi
