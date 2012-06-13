@@ -3,7 +3,6 @@ local expected_zshgitprompt=~/.../src/zsh-git-prompt
 if [[ ! -e $expected_zshgitprompt ]]; then
     echo "$expected_zshgitprompt empty."
     echo "https://github.com/olivierverdier/zsh-git-prompt needed ."
-    return
 fi
 local expected_gitdotsdir=~/.../src/git-dots
 if [[ ! -d $expected_gitdotsdir/bin ]]; then
