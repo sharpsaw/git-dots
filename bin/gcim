@@ -1,6 +1,6 @@
-#!/bin/sh -x
-## git commit -a -m
-gst; gd
+#!/bin/sh -e
+## git commit -m
+gst; gdc
 MSG="`_git-dots_read-msg "$@"`"
 set -x
 git commit -m "$MSG"
