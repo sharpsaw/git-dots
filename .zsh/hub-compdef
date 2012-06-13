@@ -1,0 +1,3 @@
+#!/bin/zsh
+## TODO: get all the zsh completion stuff ironed out for git and bin/*
+compdef hub=git
