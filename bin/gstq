@@ -5,7 +5,7 @@
 
 call_without_dash_x="sh -e `dirname $0`/gst" # (gst is gstq's sibling)
 
-if [ -t 1 -a 1 = $has_competent_script_cmd ]; then
+if [ -t 1 -a 1 = "$has_competent_script_cmd" ]; then
     _more_colorhungry_gst() {
         # A hackarooski to make git think it's dealing with a tty:
         script -q -c "$call_without_dash_x $@" /dev/null
