@@ -1,0 +1,2 @@
+#!/bin/sh -xe
+git rm --cached "$@" && sleep 1 && gq
