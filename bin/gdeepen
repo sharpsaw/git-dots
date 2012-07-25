@@ -1,0 +1,2 @@
+#!/bin/sh -xe
+git fetch --depth 99999999
