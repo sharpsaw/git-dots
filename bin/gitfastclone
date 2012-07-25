@@ -1,0 +1,5 @@
+#!/bin/bash -xe
+## Clone with --depth 1 to get you to the code faster (and `gdeepen` is always available, later on)
+. ~/.sh/maybe-hub-alias
+git clone --depth 1 "$@"
+: OK. Now at any time you can deepen the history with: git fetch --depth 99999
