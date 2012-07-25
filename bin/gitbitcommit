@@ -1,10 +1,14 @@
 #!/usr/bin/env ruby
+# encoding: utf-8
 ## A nice process for committing per-file messages.
 # TODO: Remove ruby dep (for impoverished sysems)
 $VERBOSE = true
 def run cmd
-  p cmd
-  system *cmd or fail "#{cmd.inspect} failed."
+  puts cmd.join ' '
+  if not system *cmd
+    warn "This ☝ abended. (hit ^c to stop or Enter to continue)"
+    $stdin.readline
+  end
 end
 run %w(git add .)
 `git status --porcelain`.split("\n").each do |line|
