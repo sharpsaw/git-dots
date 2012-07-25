@@ -1,8 +1,12 @@
 gccd() { ## git clone then cd. Defaults to --depth 1 clone, use -d for deeper
-    clone() { gitfastclone "$@" }
+    clone() {
+        gitfastclone "$@"
+    }
     if [ $1 = -d ]; then
         shift
-        clone() { git clone "$@" }
+        clone() {
+            git clone "$@"
+        }
     fi
     clone "$@" || return
     local dir=`gitdirfromurl $1`
