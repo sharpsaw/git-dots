@@ -1,9 +1,11 @@
-gccd() { ## git clone then cd.
-    git clone "$@"
-    local dir=`echo "$1" | sed '
-        s/\/$//
-        s/\.git$//
-        s/.*\///'`
+gccd() { ## git clone then cd. Defaults to --depth 1 clone, use -d for deeper
+    clone() { gitfastclone "$@" }
+    if [ $1 = -d ]; then
+        shift
+        clone() { git clone "$@" }
+    fi
+    clone "$@" || return
+    local dir=`gitdirfromurl $1`
     if [ -d $dir ]; then
         echo "cd $dir"
         cd $dir
