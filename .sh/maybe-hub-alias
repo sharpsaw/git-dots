@@ -1,10 +1,10 @@
 #!/bin/sh
 if type ,hub &> /dev/null; then
     # This is the one that ,hubi installs as a (faster) standalone
-    alias git=,hub
-    alias hub=,hub
+    git() { ,hub "$@"; }
+    hub() { ,hub "$@"; }
 elif type hub &> /dev/null; then
-    alias git=hub
+    git() { hub "$@"; }
 else
     hub_blurb="[32m,hubi run — reexec your shell to get \`hub\` powers.[0m"
     if [ -n "$WANT_ALL" ]; then
