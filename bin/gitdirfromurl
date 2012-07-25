@@ -1,0 +1,3 @@
+#!/bin/sh -e
+## Parse the dir part out of a repo URL (used by `gccd`)
+echo "$1" | sed 's/\/$//; s/\.git$//; s/.*\///'
