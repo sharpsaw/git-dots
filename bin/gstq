@@ -15,6 +15,7 @@ else
         eval "$call_without_dash_x" "$@"
     }
 fi
+# TODO: Make the return value of gst be the actual exit code.
 _more_colorhungry_gst "$@" |
     grep -xv '# On branch master\s*' |
         grep -xv 'nothing to commit (working directory clean)\s'
