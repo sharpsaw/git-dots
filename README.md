@@ -16,6 +16,10 @@ jjV}k!bin-docs
 * `ga.cip` ⇒ `ga. && gcip "$@"`
 * `gau` ⇒ `git add -u "$@"`
 * `gbc` ⇒ `gitbitcommit "$@"`
+* `gbi` ⇒ `git bisect "$@"`
+* `gbib` ⇒ `gbi bad "$@" && gbi next`
+* `gbig` ⇒ `gbi good "$@" && gbi next`
+* `gbin` ⇒ `gbi next "$@"`
 * `gbp` ⇒ gitbitcommit then push — because it's time to make those £'s!
 * `gbr` ⇒ `git branch "$@"`
 * `gchamp` ⇒ More aggressive than `gciamp` - does a `git add .` first.
