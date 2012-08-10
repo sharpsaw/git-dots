@@ -1,2 +1,3 @@
 #!/bin/sh -e
-gstq "$@"
+## My primary "git status" command — is 'Q'uiter than the others.
+gstq -s "$@"
