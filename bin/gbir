@@ -1,0 +1,2 @@
+#!/bin/sh -e
+gbi reset "$@" # Mnemonic: After you've bisected, it's time to 'get beer'
