@@ -71,6 +71,14 @@ jjV}k!bin-docs
 * `suppy` ⇒ `git stash && gup && gpu && git stash pop "$@"`
 * `vim-pager` ⇒ Use vim like "less". Makes "space" page downwards and Ctrl+c quit, plus more.
 
+Zsh prompt customization
+------------------------
+
+This repo comes with a `.zsh/rc/use-git-prompt` that sets PROMPT/RPROMPT. If
+you want to get the prompt gitness, but don't want to commit to this
+particular style of prompt, you can do like is done in
+[sevvie-dots/.zsh/rc/zsh-theme](https://github.com/sevvie/sevvie-dots/blob/master/.zsh/rc/zsh-theme)
+
 Sharpen that saw
 ----------------
 
