@@ -1,3 +1,4 @@
+compinit
 compdef _git ga=git-add
 compdef _git gau=git-add
 #compdef _git gbc=git-
