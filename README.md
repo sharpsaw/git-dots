@@ -20,6 +20,7 @@ jjV}k!bin-docs
 * `gbib` ⇒ `gbi bad "$@" && gbi next`
 * `gbig` ⇒ `gbi good "$@" && gbi next`
 * `gbin` ⇒ `gbi next "$@"`
+* `gbir` ⇒ `gbi reset "$@" # Mnemonic: After you've bisected, it's time to 'get beer'`
 * `gbp` ⇒ gitbitcommit then push — because it's time to make those £'s!
 * `gbr` ⇒ `git branch "$@"`
 * `gchamp` ⇒ More aggressive than `gciamp` - does a `git add .` first.
@@ -51,12 +52,13 @@ jjV}k!bin-docs
 * `gitlog` ⇒ Same as "gl". Retained for backwards compatibility.
 * `gitst` ⇒ Simple git status.
 * `gl` ⇒ `git log "$@"`
-* `glol` ⇒ `git log --pretty=oneline "$@"`
+* `glol` ⇒ `git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative "$@"`
 * `glop` ⇒ `git log -p -1 "$@"`
+* `glp` ⇒ `git log -p "$@"`
 * `gls` ⇒ `git ls-files --exclude-standard "$@"`
 * `gpop` ⇒ `git stash pop "$@"`
 * `gpu` ⇒ `git push "$@"`
-* `gq` ⇒ `gstq "$@"`
+* `gq` ⇒ My primary "git status" command — is 'Q'uieter than the others.
 * `gqvim` ⇒ Edit all changed files. (vim tip: can pass -o or afterwards do :sba)
 * `grh` ⇒ `git reset --hard HEAD "$@"`
 * `grmc` ⇒ `git rm --cached "$@"`
