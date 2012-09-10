@@ -1,10 +1,16 @@
 #!/bin/sh
 if type ,hub &> /dev/null; then
     # This is the one that ,hubi installs as a (faster) standalone
-    git() { ,hub "$@"; }
     hub() { ,hub "$@"; }
-elif type hub &> /dev/null; then
-    git() { hub "$@"; }
+    # I actually don't like this. git() { ,hub "$@"; }
+    # That is, just run these directly, they read better:
+    #   hub fork
+    #   hub create
+    #   hub pull-request
+    #   hub browse
+    #   hub compare
+    # But "gccd" will still call ,hub, so you can do shortcuts like:
+    #   gccd exad/xz  ⇒  gccd http://github.com/exad/xz
 else
     hub_blurb="[32m,hubi run — reexec your shell to get \`hub\` powers.[0m"
     if [ -n "$WANT_ALL" ]; then
