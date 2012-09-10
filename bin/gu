@@ -1,0 +1,2 @@
+#!/bin/sh -e
+git pull --rebase "$@" # see http://sethrobertson.github.com/GitPostProduction/gpp.html
