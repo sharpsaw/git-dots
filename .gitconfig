@@ -20,6 +20,7 @@
     ign = ls-files -o -i --exclude-standard
     lc = log ORIG_HEAD.. --stat --no-merges --pretty=format:'%Cred%h%Creset %Cgreen(%cr) %C(bold blue)<%an>:\n%C(yellow)%d%Creset %s %Creset\n'
     lg = log -p
+    lp = log -p
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     lol = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     ls = ls-files
@@ -42,4 +43,4 @@
 [core]
     excludesfile = ~/.gitignore_global
     # some systems set $LESS, which causes git to refuse to override.
-    pager = less -FRSX
+    pager = less -FRX
