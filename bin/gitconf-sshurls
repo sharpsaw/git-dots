@@ -1,2 +1,2 @@
 #!/bin/sh -xe
-sed -i 's,url = \(https\|git\)://\([^/]*\)/,git@\2:,' .git/config
+sed -i 's,url = \(https\|git\)://\([^/]*\)/,url = git@\2:,' .git/config
