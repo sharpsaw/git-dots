@@ -45,9 +45,11 @@ jjV}k!bin-docs
 * `git-last` ⇒ Shows the most recent commit for each file/folder in the current directory, similar to GitHub's code-browser. Accepts a list of files or directories to be examined.
 * `gitbitcommit` ⇒ A nice process for committing per-file messages.
 * `gitblame` ⇒ `git blame "$@" | vim-pager`
+* `gitconf-sshurls` ⇒ `sed -i 's,url = \(https\|git\)://\([^/]*\)/,url = git@\2:,' .git/config`
 * `gitdiff` ⇒ `git diff "$@" | vim-pager`
 * `gitdirfromurl` ⇒ Parse the dir part out of a repo URL (used by `gccd`)
 * `gitfastclone` ⇒ Clone with --depth 1 to get you to the code faster (and `gdeepen` is always available, later on)
+* `github-service-hooks` ⇒ Show JSON dump of Service Hooks for a given repo.
 * `gitlastdiff` ⇒ Show the diff vs. the previous revision.
 * `gitlog` ⇒ Same as "gl". Retained for backwards compatibility.
 * `gitst` ⇒ Simple git status.
@@ -60,12 +62,16 @@ jjV}k!bin-docs
 * `gpu` ⇒ `git push "$@"`
 * `gq` ⇒ My primary "git status" command — is 'Q'uieter than the others.
 * `gqvim` ⇒ Edit all changed files. (vim tip: can pass -o or afterwards do :sba)
+* `greb` ⇒ `git rebase "$@"`
+* `grebc` ⇒ `git rebase --continue "$@"`
 * `grh` ⇒ `git reset --hard HEAD "$@"`
 * `grmc` ⇒ `git rm --cached "$@"`
+* `grv` ⇒ `git remote -v "$@"`
 * `gst` ⇒ `git status "$@"`
 * `gsta` ⇒ `git stash save "${@:-bbiab}"`
 * `gstq` ⇒ Quiet gst (omits "On branch master" and "nothing to commit")
 * `gsub` ⇒ Submodule tools - If arg is "..." then commit saying "Submodule updates.", otherwise run args as a command foreach submodule, and default to "git status".
+* `gu` ⇒ `git pull --rebase "$@" # see http://sethrobertson.github.com/GitPostProduction/gpp.html`
 * `gundo` ⇒ `git reset HEAD^ "$@"`
 * `gup` ⇒ `git pull "$@"`
 * `guppy` ⇒ `gup && gpu "$@"`
