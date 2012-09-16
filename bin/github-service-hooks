@@ -1,7 +1,8 @@
 #!/bin/bash -e
+## Show JSON dump of Service Hooks for a given repo.
 read  -p 'Github Login: ' ghlogin
 read -sp 'Github Pass: ' ghpass; echo
-read  -p "User/Org \(default: $ghlogin\): " user
+read  -p "User/Org (default: $ghlogin): " user
 read  -p 'Repo: ' repo
 dir=${user:-$ghlogin}
 curl -u $ghlogin:$ghpass https://api.github.com/repos/$dir/$repo/hooks
