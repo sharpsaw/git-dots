@@ -75,6 +75,7 @@ jjV}k!bin-docs
 * `gundo` ⇒ `git reset HEAD^ "$@"`
 * `gup` ⇒ `git pull "$@"`
 * `guppy` ⇒ `gup && gpu "$@"`
+* `gwd` ⇒ `gd --word-diff "$@"`
 * `sup` ⇒ `git stash && gup && git stash pop "$@"`
 * `suppy` ⇒ `git stash && gup && gpu && git stash pop "$@"`
 * `vim-pager` ⇒ Use vim like "less". Makes "space" page downwards and Ctrl+c quit, plus more.
