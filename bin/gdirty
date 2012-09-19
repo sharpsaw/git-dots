@@ -1,0 +1,3 @@
+#!/bin/sh -e
+## List commits that need to be merged or pushed.
+git rev-parse @{u} &>/dev/null && git rev-list --left-right @{u}...HEAD

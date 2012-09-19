@@ -1,4 +1,4 @@
 #!/bin/sh -e
 ## My primary "git status" command — is 'Q'uieter than the others.
-git rev-list --left-right @{u}...HEAD
+gdirty || true
 git status -s "$@"
