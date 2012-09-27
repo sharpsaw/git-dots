@@ -14,7 +14,7 @@ fi
 source $expected_zshgitprompt/zshrc.sh
 export __GIT_PROMPT_DIR=$expected_zshgitprompt
 PROMPT='$(git_super_status)%{$fg[cyan]%}%B%#%b%{${reset_color}%} '
-RPROMPT='%{$fg[cyan]%}%~%b@%{$fg[red]%}%B%m'
+RPROMPT='%{$fg[cyan]%}%n@%m%b:%{$fg[red]%}%B%~'
 
 # The cache is more of a pain than a win.
 function preexec_update_git_vars() { __EXECUTED_GIT_COMMAND=1 }
