@@ -1,2 +1,4 @@
-#!/bin/sh -x
-git diff --cached "$@"
+#!/bin/bash
+## Show staging diffs (== gd --cached)
+(set -x; git diff --cached "$@")
+[[ $? == 0 || $? == 128 ]] # guard against nonzero exit for new repos
