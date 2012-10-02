@@ -9,6 +9,7 @@ Update by having sharpsaw/perl-dots then yy@" on the next line:
 jjV}k!bin-docs
 -->
 * `,hubi` ⇒ Install defunkt's `hub` command.
+* `g.` ⇒ Quick commit-all without push (gchamp's little bro)
 * `ga` ⇒ `git add "$@"`
 * `ga.` ⇒ OK, this one's lazy. It saves you a space versus `ga .`.
 * `ga.ci` ⇒ `ga. && gci "$@"`
@@ -37,9 +38,10 @@ jjV}k!bin-docs
 * `gcob` ⇒ `git checkout -b "$@" # To quickly create and switch to a branch.`
 * `gcp` ⇒ `git cherry-pick -x "$@"`
 * `gd` ⇒ `git diff "$@"`
-* `gdc` ⇒ `git diff --cached "$@"`
+* `gdc` ⇒ Show staging diffs (== gd --cached)
 * `gdcv` ⇒ `git diff --cached "$@" | vim-pager`
 * `gdeepen` ⇒ `git fetch --depth 99999999`
+* `gdirty` ⇒ List commits that need to be merged or pushed.
 * `gdv` ⇒ `git diff "$@" | vim-pager`
 * `git-change-author` ⇒ Read name/email into ~/.gitauthor, which is sourced by ~/.sh/init-git-vars
 * `git-last` ⇒ Shows the most recent commit for each file/folder in the current directory, similar to GitHub's code-browser. Accepts a list of files or directories to be examined.
