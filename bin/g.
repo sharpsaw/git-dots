@@ -1,0 +1,8 @@
+#!/bin/sh -e
+## Quick commit-all without push (gchamp's little bro)
+ga.
+gstq
+gdc
+MSG="`_git-dots_read-msg "$@"`"
+set -x
+git commit -a -m "$MSG"
