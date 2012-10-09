@@ -1,3 +1,12 @@
 #!/bin/sh -e
 ## Parse the dir part out of a repo URL (used by `gccd`)
-echo "$1" | sed 's/\/$//; s/\.git$//; s/.*\///'
+if [ $# = 2 ]; then
+    echo $2
+    exit 0
+else
+    no_dotgit=${1%.git}
+    dirs_eaten=${no_dotgit##*/}
+    colon_chopped=${dirs_eaten##*:}
+    and_no_trailing_slash=${colon_chopped%/}
+    echo $and_no_trailing_slash
+fi
