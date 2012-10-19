@@ -61,6 +61,7 @@ jjV}k!bin-docs
 * `glop` ⇒ `git log -p -1 "$@"`
 * `glp` ⇒ `git log -p "$@"`
 * `gls` ⇒ `git ls-files --exclude-standard "$@"`
+* `gmer` ⇒ `git merge "$@"`
 * `gpop` ⇒ `git stash pop "$@"`
 * `gpu` ⇒ `git push "$@"`
 * `gq` ⇒ My primary "git status" command — is 'Q'uieter than the others.

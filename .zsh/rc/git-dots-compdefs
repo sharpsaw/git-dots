@@ -35,6 +35,7 @@ compdef _git gl=git-log
 compdef _git glol=git-log
 compdef _git glop=git-log
 compdef _git gls=git-ls-files
+compdef _git gmer=git-merge
 compdef _git gbi=git-bisect
 compdef _git gbin=git-bisect
 compdef _git gbib=git-bisect
