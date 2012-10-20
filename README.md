@@ -71,6 +71,7 @@ jjV}k!bin-docs
 * `grh` ⇒ `git reset --hard HEAD "$@"`
 * `grmc` ⇒ `git rm --cached "$@"`
 * `grv` ⇒ `git remote -v "$@"`
+* `gsho` ⇒ `git show "$@"`
 * `gst` ⇒ `git status "$@"`
 * `gsta` ⇒ `git stash save "${@:-bbiab}"`
 * `gstq` ⇒ Quiet gst (omits "On branch master" and "nothing to commit")
