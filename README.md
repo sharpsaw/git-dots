@@ -44,6 +44,7 @@ jjV}k!bin-docs
 * `gdeepen` ⇒ `git fetch --depth 99999999`
 * `gdirty` ⇒ List commits that need to be merged or pushed.
 * `gdv` ⇒ `git diff "$@" | vim-pager`
+* `gfe` ⇒ `git fetch "$@"`
 * `git-change-author` ⇒ Read name/email into ~/.gitauthor, which is sourced by ~/.sh/init-git-vars
 * `git-last` ⇒ Shows the most recent commit for each file/folder in the current directory, similar to GitHub's code-browser. Accepts a list of files or directories to be examined.
 * `gitbitcommit` ⇒ A nice process for committing per-file messages.
