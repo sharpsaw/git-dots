@@ -15,9 +15,11 @@ zstyle ':vcs_info:git+set-message:*' hooks check-untracked
 # zstyle ':vcs_info:*+*:*' debug true
 
 +vi-tone-down-master() { hook_com[branch]=${hook_com[branch]/#%master/ﬆ} }
+git-ls-others() { git ls-files --others --exclude-standard 2>&- }
 +vi-check-untracked() {
-    local count=$(git ls-files --others --exclude-standard 2>- | wc -l) &&
-      hook_com[unstaged]="${hook_com[unstaged]}%{%F{82}%}…$count"
+    git-ls-others | grep -q . || return
+    local count=$(git-ls-others | wc -l | grep -v '^0$')
+    hook_com[unstaged]="${hook_com[unstaged]}%{%F{82}%}…$count"
 }
 
 precmd() vcs_info
