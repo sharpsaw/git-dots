@@ -12,7 +12,7 @@ zstyle ':vcs_info:git*:*' stagedstr '%{%F{19}%}●%{%}'
 zstyle ':vcs_info:git*:*' unstagedstr '%{%F{196}%}✚%{%}'
 zstyle ':vcs_info:git+post-backend:*' hooks tone-down-master
 zstyle ':vcs_info:git+set-message:*' hooks check-untracked
-zstyle ':vcs_info:*+*:*' debug true
+# zstyle ':vcs_info:*+*:*' debug true
 
 +vi-tone-down-master() { hook_com[branch]=${hook_com[branch]/#%master/ﬆ} }
 +vi-check-untracked() {
