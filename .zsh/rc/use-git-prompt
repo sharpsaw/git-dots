@@ -2,6 +2,8 @@
 HOST_COLOR=${HOST_COLOR:-31}
 USER_COLOR=${USER_COLOR:-24}
 PROMPT_DIR_COLOR=${PROMPT_DIR_COLOR:-64}
+VCS_UNTRACKED_COLOR=${VCS_UNTRACKED_COLOR:-82}
+VCS_UNTRACKED_SIGIL=${VCS_UNTRACKED_SIGIL:-…}
 
 # These have to happen before (they get interpolated):
 VCS_SIGIL=${VCS_SIGIL:-∇}
@@ -28,7 +30,7 @@ git-ls-others() { git ls-files --others --exclude-standard 2>&- }
 +vi-check-untracked() {
     [[ -n $(git-ls-others) ]] || return
     local count=$(git-ls-others | wc -l)
-    hook_com[unstaged]="${hook_com[unstaged]}%{%F{82}%}…$count"
+    hook_com[unstaged]="${hook_com[unstaged]}%{%F{$VCS_UNTRACKED_COLOR}%}${VCS_UNTRACKED_SIGIL}$count"
 }
 
 precmd() vcs_info
