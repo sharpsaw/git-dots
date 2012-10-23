@@ -1,15 +1,22 @@
-# (You can assign these before or after this file)
-HOST_COLOR=${SHOST_COLOR:-31}
-USER_COLOR=${SUSER_COLOR:-24}
-PROMPT_DIR_COLOR=${SPROMPT_DIR_COLOR:-64}
+# You can assign these before or after this file:
+HOST_COLOR=${HOST_COLOR:-31}
+USER_COLOR=${USER_COLOR:-24}
+PROMPT_DIR_COLOR=${PROMPT_DIR_COLOR:-64}
+
+# These have to happen before (they get interpolated):
+VCS_SIGIL_COLOR=${VCS_SIGIL_COLOR:-42}
+VCS_BRANCH_COLOR=${VCS_BRANCH_COLOR:-26}
+VCS_SIGIL_COLOR=${VCS_SIGIL_COLOR:-42}
+VCS_STAGED_COLOR=${VCS_UNSTAGED_COLOR:-96}
+VCS_UNSTAGED_COLOR=${VCS_UNSTAGED_COLOR:-196}
 
 autoload -U vcs_info
 zstyle ':vcs_info:*' enable git hg bzr svn
 zstyle ':vcs_info:(hg*|git*):*' check-for-changes true
-zstyle ':vcs_info:*' formats '%{%F{42}%}∇%{%F{26}%}%b%u%c'
+zstyle ':vcs_info:*' formats "%{%F{$VCS_SIGIL_COLOR}%}$VCS_SIGIL%{%F{$VCS_BRANCH_COLOR}%}%b%u%c"
 zstyle ':vcs_info:*' branchformat '%b-%r'
-zstyle ':vcs_info:git*:*' stagedstr '%{%F{19}%}●%{%}'
-zstyle ':vcs_info:git*:*' unstagedstr '%{%F{196}%}✚%{%}'
+zstyle ':vcs_info:git*:*' stagedstr "%{%F{$VCS_STAGED_COLOR}%}●%{%}"
+zstyle ':vcs_info:git*:*' unstagedstr "%{%F{$VCS_UNSTAGED_COLOR}%}✚%{%}"
 zstyle ':vcs_info:git+post-backend:*' hooks tone-down-master
 zstyle ':vcs_info:git+set-message:*' hooks check-untracked
 # zstyle ':vcs_info:*+*:*' debug true
