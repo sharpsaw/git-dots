@@ -1,21 +1,28 @@
-#!/bin/zsh
-local expected_zshgitprompt=~/.../src/zsh-git-prompt
-if [[ ! -e $expected_zshgitprompt ]]; then
-    echo "$expected_zshgitprompt empty."
-    echo "https://github.com/olivierverdier/zsh-git-prompt needed ."
-fi
-local expected_gitdotsdir=~/.../src/git-dots
-if [[ ! -d $expected_gitdotsdir/bin ]]; then
-    [[ $PREEXEC_HUSHUP != 1 ]] &&
-        echo "No bin/ dir in $expected_gitdotsdir; Odd."
-    export PREEXEC_HUSHUP=1
-fi
+# (You can assign these before or after this file)
+HOST_COLOR=${SHOST_COLOR:-31}
+USER_COLOR=${SUSER_COLOR:-24}
+PROMPT_DIR_COLOR=${SPROMPT_DIR_COLOR:-64}
 
-source $expected_zshgitprompt/zshrc.sh
-export __GIT_PROMPT_DIR=$expected_zshgitprompt
-PROMPT='$(git_super_status)%{$fg[cyan]%}%B%#%b%{${reset_color}%} '
-RPROMPT='%{$fg[cyan]%}%n@%m%b:%{$fg[red]%}%B%~'
+autoload -U vcs_info
+zstyle ':vcs_info:*' enable git hg bzr svn
+zstyle ':vcs_info:(hg*|git*):*' check-for-changes true
+zstyle ':vcs_info:*' formats '%{%F{42}%}∇%{%F{26}%}%b%u%c'
+zstyle ':vcs_info:*' branchformat '%b-%r'
+zstyle ':vcs_info:git*:*' stagedstr '%{%F{19}%}●%{%}'
+zstyle ':vcs_info:git*:*' unstagedstr '%{%F{196}%}✚%{%}'
+zstyle ':vcs_info:git+post-backend:*' hooks tone-down-master
+zstyle ':vcs_info:git+set-message:*' hooks check-untracked
+zstyle ':vcs_info:*+*:*' debug true
 
-# The cache is more of a pain than a win.
-function preexec_update_git_vars() { __EXECUTED_GIT_COMMAND=1 }
-# set ft=zsh
++vi-tone-down-master() { hook_com[branch]=${hook_com[branch]/#%master/ﬆ} }
++vi-check-untracked() {
+    local count=$(git ls-files --others --exclude-standard 2>- | wc -l) &&
+      hook_com[unstaged]="${hook_com[unstaged]}%{%F{82}%}…$count"
+}
+
+precmd() vcs_info
+setopt promptsubst
+export PROMPT='${vcs_info_msg_0_}%{%F{$HOST_COLOR}%}%B%#%b%{${reset_color}%} '
+export RPROMPT=\
+'%{%F{$USER_COLOR}%}%n%{${reset_color}%}@%{%F{$HOST_COLOR}%}%m%b:%{%F{$PROMPT_DIR_COLOR}%}%B%~'
+# vim:ft=zsh
