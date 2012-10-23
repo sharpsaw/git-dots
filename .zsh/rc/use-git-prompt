@@ -18,7 +18,7 @@ zstyle ':vcs_info:git+set-message:*' hooks check-untracked
 git-ls-others() { git ls-files --others --exclude-standard 2>&- }
 +vi-check-untracked() {
     git-ls-others | grep -q . || return
-    local count=$(git-ls-others | wc -l | grep -v '^0$')
+    local count=$(git-ls-others | wc -l)
     hook_com[unstaged]="${hook_com[unstaged]}%{%F{82}%}…$count"
 }
 
