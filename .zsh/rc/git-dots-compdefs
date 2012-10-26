@@ -18,7 +18,12 @@ compdef _git gco=git-checkout
 compdef _git gcob=git-checkout
 compdef _git gcp=git-cherry-pick
 compdef _git gd=git-diff
-compdef _git gdc=git-diff
+
+# hack time!  This doesn't quite satisfy: compdef _git gdc=git-diff
+# So I do this:
+alias gdc='git diff --cached'
+# TODO: find the compdef line that makes it go into --cached mode.
+
 compdef _git gdcv=git-diff
 #compdef _git gdeepen=git-
 compdef _git gdv=git-diff
