@@ -49,6 +49,7 @@ compdef _git gbig=git-bisect
 compdef _git gpu=git-push
 compdef _git gq=git-status
 #compdef _git gqvim=git-
+compdef _git greb=git-rebase
 compdef _git grh=git-reset
 compdef _git grmc=git-rm
 compdef _git gst=git-status

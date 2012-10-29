@@ -67,6 +67,7 @@ jjV}k!bin-docs
 * `gpu` ⇒ `git push "$@"`
 * `gq` ⇒ My primary "git status" command — is 'Q'uieter than the others.
 * `gqvim` ⇒ Edit all changed files. (vim tip: can pass -o or afterwards do :sba)
+* `gra` ⇒ `git remote add "$@"`
 * `greb` ⇒ `git rebase "$@"`
 * `grebc` ⇒ `git rebase --continue "$@"`
 * `grh` ⇒ `git reset --hard HEAD "$@"`
