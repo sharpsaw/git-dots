@@ -15,6 +15,7 @@ jjV}k!bin-docs
 * `ga.ci` ⇒ `ga. && gci "$@"`
 * `ga.cimp` ⇒ `ga. && gcimp "$@"`
 * `ga.cip` ⇒ `ga. && gcip "$@"`
+* `gaci` ⇒ `ga "$@" && gci`
 * `gau` ⇒ `git add -u "$@"`
 * `gbc` ⇒ `gitbitcommit "$@"`
 * `gbi` ⇒ `git bisect "$@"`
@@ -45,6 +46,7 @@ jjV}k!bin-docs
 * `gdirty` ⇒ List commits that need to be merged or pushed.
 * `gdv` ⇒ `git diff "$@" | vim-pager`
 * `gfe` ⇒ `git fetch "$@"`
+* `ghi` ⇒ Github Issues CLI tool — https://github.com/stephencelis/ghi
 * `git-change-author` ⇒ Read name/email into ~/.gitauthor, which is sourced by ~/.sh/init-git-vars
 * `git-last` ⇒ Shows the most recent commit for each file/folder in the current directory, similar to GitHub's code-browser. Accepts a list of files or directories to be examined.
 * `gitbitcommit` ⇒ A nice process for committing per-file messages.
@@ -78,6 +80,7 @@ jjV}k!bin-docs
 * `gsta` ⇒ `git stash save "${@:-bbiab}"`
 * `gstq` ⇒ Quiet gst (omits "On branch master" and "nothing to commit")
 * `gsub` ⇒ Submodule tools - If arg is "..." then commit saying "Submodule updates.", otherwise run args as a command foreach submodule, and default to "git status".
+* `gsuba` ⇒ `git submodule add "$@"`
 * `gu` ⇒ `git pull --rebase "$@" # see http://sethrobertson.github.com/GitPostProduction/gpp.html`
 * `gundo` ⇒ `git reset HEAD^ "$@"`
 * `gup` ⇒ `git pull "$@"`
