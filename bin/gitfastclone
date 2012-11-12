@@ -1,5 +1,9 @@
-#!/bin/bash -xe
+#!/bin/bash -e
 ## Clone with --depth 1 to get you to the code faster (and `gdeepen` is always available, later on)
-. ~/.sh/maybe-hub-alias
-hub clone --depth 1 "$@"
-gdeepen >&- & : downloading remaining history in background.
+(
+    set -x
+    . ~/.sh/maybe-hub-alias
+    hub clone --depth 1 "$@"
+)
+echo 'Downloading remaining history in background.'
+(cd $(gitdirfromurl "$1"); gdeepen) &

@@ -1,2 +1,2 @@
 #!/bin/sh -xe
-git fetch --depth 99999999
+git fetch --quiet --depth 99999999
