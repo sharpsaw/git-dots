@@ -47,3 +47,5 @@
 
 [merge]
     tool = vimdiff
+[diff]
+    tool = vimdiff
