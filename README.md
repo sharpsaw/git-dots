@@ -38,11 +38,12 @@ jjV}k!bin-docs
 * `gcip` ⇒ `gci "$@" && git push`
 * `gco` ⇒ `git checkout "$@"`
 * `gcob` ⇒ `git checkout -b "$@" # To quickly create and switch to a branch.`
+* `gcom` ⇒ `git checkout master "$@"`
 * `gcp` ⇒ `git cherry-pick -x "$@"`
 * `gd` ⇒ `git diff "$@"`
 * `gdc` ⇒ Show staging diffs (== gd --cached)
 * `gdcv` ⇒ `git diff --cached "$@" | vim-pager`
-* `gdeepen` ⇒ `git fetch --depth 99999999`
+* `gdeepen` ⇒ `git fetch --quiet --depth 99999999`
 * `gdirty` ⇒ List commits that need to be merged or pushed.
 * `gdv` ⇒ `git diff "$@" | vim-pager`
 * `gfe` ⇒ `git fetch "$@"`
@@ -66,13 +67,15 @@ jjV}k!bin-docs
 * `gls` ⇒ `git ls-files --exclude-standard "$@"`
 * `gmer` ⇒ `git merge "$@"`
 * `gpop` ⇒ `git stash pop "$@"`
-* `gpu` ⇒ `git push "$@"`
+* `gpu` ⇒ `git push --quiet "$@"`
 * `gq` ⇒ My primary "git status" command — is 'Q'uieter than the others.
 * `gqvim` ⇒ Edit all changed files. (vim tip: can pass -o or afterwards do :sba)
 * `gra` ⇒ `git remote add "$@"`
 * `greb` ⇒ `git rebase "$@"`
 * `grebc` ⇒ `git rebase --continue "$@"`
-* `grh` ⇒ `git reset --hard HEAD "$@"`
+* `grem` ⇒ `git remote "$@"`
+* `grema` ⇒ `git remote add "$@"`
+* `grh` ⇒ `git reset --hard "${@:-HEAD}"`
 * `grmc` ⇒ `git rm --cached "$@"`
 * `grv` ⇒ `git remote -v "$@"`
 * `gsho` ⇒ `git show "$@"`
