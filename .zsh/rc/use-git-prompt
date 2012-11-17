@@ -13,6 +13,8 @@ VCS_STAGED_SIGIL=${VCS_STAGED_SIGIL:-●}
 VCS_STAGED_COLOR=${VCS_UNSTAGED_COLOR:-96}
 VCS_UNSTAGED_COLOR=${VCS_UNSTAGED_COLOR:-196}
 VCS_UNSTAGED_SIGIL=${VCS_UNSTAGED_SIGIL:-✚}
+XDEBUG_COLOR=${XDEBUG_COLOR:-90}
+XDEBUG_SIGIL=${XDEBUG_SIGIL:-:;} # Because it pastes back in as a command
 
 autoload -U vcs_info
 zstyle ':vcs_info:*' enable git hg bzr svn
@@ -36,6 +38,7 @@ git-ls-others() { git ls-files --others --exclude-standard 2>&- }
 precmd() vcs_info
 setopt promptsubst
 export PROMPT='${vcs_info_msg_0_}%{%F{$HOST_COLOR}%}%B%#%b%{${reset_color}%} '
-export RPROMPT=\
-'%{%F{$USER_COLOR}%}%n%{${reset_color}%}@%{%F{$HOST_COLOR}%}%m%b:%{%F{$PROMPT_DIR_COLOR}%}%B%~'
+export RPROMPT='%{%F{$USER_COLOR}%}%n%{${reset_color}%}@%{%F{$HOST_COLOR}%}%m%b:%{%F{$PROMPT_DIR_COLOR}%}%B%~%{${reset_color}%}'
+export PROMPT4="%{%F{$XDEBUG_COLOR}%}$XDEBUG_SIGIL%{$reset_color%} "
+
 # vim:ft=zsh
