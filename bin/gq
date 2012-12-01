@@ -1,4 +1,8 @@
 #!/bin/sh -e
-## My primary "git status" command — is 'Q'uieter than the others.
-gdirty || true
-git status -s "$@"
+## My primary "git status" command — is 'Q'uieter than the others. Redirects don't even show status, for use like: vim $(gq)
+if [ -t 1 ]; then
+    gdirty || true
+    git status -s "$@"
+else
+    git status --porcelain | cut -b4-
+fi
