@@ -1,11 +1,7 @@
-gccd() { ## git clone then cd. Defaults to --depth 1 clone, use -d for deeper
+gccd() { ## git shallow clone, then cd, then deepen in the background
     clone() { gitfastclone "$@"; }
-    if [ $1 = -d ]; then
-        shift
-        clone() { git clone "$@"; }
-    fi
     clone "$@" || return
-    local dir=`gitdirfromurl $1`
+    local dir=`gitdirfromurl "$@"`
     if [ -d $dir ]; then
         echo "cd $dir"
         cd $dir
@@ -14,4 +10,5 @@ gccd() { ## git clone then cd. Defaults to --depth 1 clone, use -d for deeper
         echo "(Either something happened with the clone or it was a bad guess)"
     fi
 }
+
 # vim:ft=sh

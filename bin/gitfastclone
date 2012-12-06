@@ -6,4 +6,4 @@
     hub clone --depth 1 "$@"
 )
 echo 'Downloading remaining history in background.'
-(cd $(gitdirfromurl "$1"); gdeepen) &
+(cd $(gitdirfromurl "$@"); gdeepen) &
