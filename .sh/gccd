@@ -6,8 +6,12 @@ gccd() { ## git shallow clone, then cd, then deepen in the background
         echo "cd $dir"
         cd $dir
     else
-        echo "Oops. I (gccd) guessed '$dir' from '$1', but that dir is absent."
-        echo "(Either something happened with the clone or it was a bad guess)"
+        cat <<-EOT
+Oops. I (gccd) was given '$@'
+And guessed: '$dir'
+But that doesn't appear to be a dir.
+(Either something happened with the clone or it was a bad guess)
+        EOT
     fi
 }
 
