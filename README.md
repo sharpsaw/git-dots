@@ -68,7 +68,7 @@ jjV}k!bin-docs
 * `gmer` ⇒ `git merge "$@"`
 * `gpop` ⇒ `git stash pop "$@"`
 * `gpu` ⇒ `git push --quiet "$@"`
-* `gq` ⇒ My primary "git status" command — is 'Q'uieter than the others.
+* `gq` ⇒ My primary "git status" command — is 'Q'uieter than the others. Is even quieter when redirecting, e.g.: vim $(gq)
 * `gqvim` ⇒ Edit all changed files. (vim tip: can pass -o or afterwards do :sba)
 * `gra` ⇒ `git remote add "$@"`
 * `greb` ⇒ `git rebase "$@"`

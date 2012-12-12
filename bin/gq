@@ -1,5 +1,5 @@
 #!/bin/bash -e
-## My primary "git status" command — is 'Q'uieter than the others. Redirects don't even show status, for use like: vim $(gq)
+## My primary "git status" command — is 'Q'uieter than the others. Is even quieter when redirecting, e.g.: vim $(gq)
 if [ -t 1 ]; then
     gdirty || true
     git status -s "$@"
