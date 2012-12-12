@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/bash -e
 ## My primary "git status" command — is 'Q'uieter than the others. Redirects don't even show status, for use like: vim $(gq)
 if [ -t 1 ]; then
     gdirty || true
@@ -6,3 +6,4 @@ if [ -t 1 ]; then
 else
     git status --porcelain | cut -b4-
 fi
+git diff --exit-code >&-
