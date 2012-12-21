@@ -4,6 +4,6 @@ if [ -t 1 ]; then
     gdirty || true
     git status -s "$@"
 else
-    git status --porcelain | cut -b4-
+    git status --porcelain "$@" | cut -b4-
 fi
 git diff --exit-code >&-
