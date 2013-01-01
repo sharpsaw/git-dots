@@ -1,6 +1,5 @@
 gccd() { ## git shallow clone, then cd, then deepen in the background
-    clone() { gitfastclone "$@"; }
-    clone "$@" || return
+    gitfastclone "$@" || return
     local dir=`gitdirfromurl "$@"`
     if [ -d $dir ]; then
         echo "cd $dir"
@@ -11,7 +10,7 @@ Oops. I (gccd) was given '$@'
 And guessed: '$dir'
 But that doesn't appear to be a dir.
 (Either something happened with the clone or it was a bad guess)
-        EOT
+EOT
     fi
 }
 
