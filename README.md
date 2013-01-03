@@ -5,7 +5,7 @@ A few speedy aliases and vim maps for git stuff.
 
 <!--
 Requires: https://github.com/sharpsaw/perl-dots (for its bin/bin-docs)
-Update by having sharpsaw/perl-dots then Y@" on the next line:
+Update by having sharpsaw/perl-dots then yy@" on the next line:
 jjV}k!bin-docs
 -->
 * `,hubi` ⇒ Install defunkt's `hub` command.
