@@ -69,7 +69,6 @@ jjV}k!bin-docs
 * `gpop` ⇒ `git stash pop "$@"`
 * `gpu` ⇒ `git push --quiet "$@"`
 * `gq` ⇒ My primary "git status" command — is 'Q'uieter than the others. Is even quieter when redirecting, e.g.: vim $(gq)
-* `gqvim` ⇒ Edit all changed files. (vim tip: can pass -o or afterwards do :sba)
 * `gra` ⇒ `git remote add "$@"`
 * `greb` ⇒ `git rebase "$@"`
 * `grebc` ⇒ `git rebase --continue "$@"`
@@ -91,6 +90,7 @@ jjV}k!bin-docs
 * `gwd` ⇒ `gd --word-diff "$@"`
 * `sup` ⇒ `git stash && gup && git stash pop "$@"`
 * `suppy` ⇒ `git stash && gup && gpu && git stash pop "$@"`
+* `vigq` ⇒ Edit all changed files. (vim tip: can pass -o or afterwards do :sba)
 * `vim-pager` ⇒ Use vim like "less". Makes "space" page downwards and Ctrl+c quit, plus more.
 
 Zsh prompt customization
