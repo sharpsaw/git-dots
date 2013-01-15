@@ -1,2 +1,2 @@
-#!/bin/sh -x
-git branch "$@"
+#!/bin/sh
+git branch -v "$@"
