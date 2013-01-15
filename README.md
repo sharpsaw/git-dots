@@ -24,7 +24,8 @@ jjV}k!bin-docs
 * `gbin` ⇒ `gbi next "$@"`
 * `gbir` ⇒ `gbi reset "$@" # Mnemonic: After you've bisected, it's time to 'get beer'`
 * `gbp` ⇒ gitbitcommit then push — because it's time to make those £'s!
-* `gbr` ⇒ `git branch "$@"`
+* `gbr` ⇒ `git branch -v "$@"`
+* `gbrd` ⇒ List branches sorted by date
 * `gchamp` ⇒ More aggressive than `gciamp` - does a `git add .` first.
 * `gchap` ⇒ Like `gchamp` but use editor instead of one-line read.
 * `gci` ⇒ `git commit -v "$@"`
@@ -73,6 +74,7 @@ jjV}k!bin-docs
 * `gra` ⇒ `git remote add "$@"`
 * `greb` ⇒ `git rebase "$@"`
 * `grebc` ⇒ `git rebase --continue "$@"`
+* `grebi` ⇒ `git rebase -i "${@-HEAD~2}"`
 * `grem` ⇒ `git remote "$@"`
 * `grema` ⇒ `git remote add "$@"`
 * `grh` ⇒ `git reset --hard "${@:-HEAD}"`
