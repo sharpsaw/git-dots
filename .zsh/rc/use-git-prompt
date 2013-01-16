@@ -29,7 +29,7 @@ zstyle ':vcs_info:git+set-message:*' hooks check-untracked
 git-ls-others() { git ls-files --others --exclude-standard 2>&- }
 +vi-check-untracked() {
     [[ -n $(git-ls-others) ]] || return
-    local count=$(git-ls-others | wc -l)
+    local count=$(git-ls-others | wc -l | sed 's/ //g')
     hook_com[unstaged]="${hook_com[unstaged]}%{%F{$VCS_UNTRACKED_COLOR}%}${VCS_UNTRACKED_SIGIL}$count"
 }
 
