@@ -4,7 +4,7 @@ OUT=$HOME/.gitauthor
 
 if [ -e $OUT ]; then
     cat $OUT
-    echo -e "\e[34m(↑ previous $OUT)\e[0m"
+    echo -e "[34m(↑ previous $OUT)[0m"
 fi
 
 read -p "[32mNew author name[0m: " name
@@ -20,8 +20,8 @@ EOT
 
 echo
 cat $OUT
-echo -e "\e[34m↑ Saved to $OUT\e[0m"
+echo -e "[34m↑ Saved to $OUT[0m"
 
 if [[ $1 != '-q' ]]; then
-    echo -e "\n\e[34;1mNow do:\e[0m exec $SHELLNAME"
+    echo -e "\n[34;1mNow do:[0m exec $SHELLNAME"
 fi
