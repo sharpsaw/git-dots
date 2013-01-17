@@ -45,6 +45,7 @@ jjV}k!bin-docs
 * `gdcv` ⇒ `git diff --cached "$@" | vim-pager`
 * `gdeepen` ⇒ `git fetch --quiet --depth 99999999`
 * `gdirty` ⇒ List commits that need to be merged or pushed.
+* `gdu` ⇒ `git diff @{u} "$@" # show differences from upstream (e.g., to what does the output of `gdirty` refer?)`
 * `gdv` ⇒ `git diff "$@" | vim-pager`
 * `gfe` ⇒ `git fetch "$@"`
 * `ghi` ⇒ Github Issues CLI tool — https://github.com/stephencelis/ghi
@@ -78,6 +79,7 @@ jjV}k!bin-docs
 * `grmc` ⇒ `git rm --cached "$@"`
 * `grv` ⇒ `git remote -v "$@"`
 * `gsho` ⇒ `git show "$@"`
+* `gshunt` ⇒ moves the most recent commit to the named branch (useful if you've just realised that you committed in the wrong place!) [cirwin's invention]
 * `gst` ⇒ `git status "$@"`
 * `gsta` ⇒ `git stash save "${@:-bbiab}"`
 * `gstq` ⇒ Quiet gst (omits "On branch master" and "nothing to commit")

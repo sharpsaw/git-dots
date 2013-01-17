@@ -1,0 +1,2 @@
+#!/bin/sh -xe
+git diff @{u} "$@" # show differences from upstream (e.g., to what does the output of `gdirty` refer?)
