@@ -1,4 +1,4 @@
 #!/bin/sh -xe
 ## Install defunkt's `hub` command.
 hub --version || gem install hub
-hub hub standalone > ~/bin/,hub && chmod +x ~/bin/,hub
+hub hub standalone > ~/bin/hub && chmod +x ~/bin/hub

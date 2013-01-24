@@ -1,9 +1,14 @@
 #!/bin/bash -e
 ## Clone with --depth 1 to get you to the code faster (and `gdeepen` is always available, later on)
+if type hub 2>/dev/null; then
+    git=hub
+else
+    echo "'hub' command missing. Functionality degraded."
+    git=git
+fi
 (
     set -x
-    . ~/.sh/maybe-hub-alias
-    hub clone --depth 1 "$@"
+    $git clone --depth 1 "$@"
 )
 echo 'Downloading remaining history in background.'
 (cd $(gitdirfromurl "$@"); gdeepen) &
