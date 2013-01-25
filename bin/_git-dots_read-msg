@@ -3,7 +3,7 @@
 if [ -n "$*" ]; then
     msg="$@"
 else
-    printf "%0$((50+17))s\n" 'Linus Line ends here ↓' > /dev/tty
+    printf "% $((50+17))s\n" 'Linus Line ends here ↓' > /dev/tty
     printf 'Commit message: ' > /dev/tty
     read msg
 fi
