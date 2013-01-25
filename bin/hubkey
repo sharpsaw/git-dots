@@ -1,0 +1,32 @@
+#!/bin/zsh -e
+me="${0##*/}"
+unix_user=$1
+github_user=${2-$1}
+their_home=~$unix_user
+ssh_dir=$their_home/.ssh
+authorized_keys=$ssh_dir/authorized_keys
+if [ $# -lt 1 ]; then
+    cat <<EOT
+Usage: $me unix-username github-username
+   or: $me username # if they're the same
+EOT
+  exit 1
+fi
+if [ ! -d $their_home ]; then
+    cat <<EOT
+$their_home isn't a directory. Need to adduser?
+EOT
+    exit 2
+fi
+tmp=~/$me-temp-download-should-get-deleted.$$
+( set -ex; curl https://github.com/${github_user}.keys > $tmp )
+cat $tmp
+echo
+echo "Does that look good?  ^c for no, Enter for yes."
+read
+sudo mkdir -p $ssh_dir
+sudo touch $authorized_keys
+sudo chmod 600 $authorized_keys
+(sudo cat $authorized_keys $tmp | sort | uniq; echo) | sudo tee $authorized_keys
+echo "sudo $EDITOR $authorized_keys # if you don't like ^ that"
+rm $tmp
