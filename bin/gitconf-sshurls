@@ -1,2 +1,11 @@
-#!/bin/sh -xe
-sed -i 's,url = \(https\|git\)://\([^/]*\)/,url = git@\2:,' .git/config
+#!/usr/bin/env ruby
+PATH = '.git/config'
+before = File.read PATH
+after = before.gsub %r(url = (https|git)://([^/]*)), 'url = git@\2:'
+if before != after
+  puts "\e[32mUpgrading to ssh urls\e[0m"
+  File.open '.git/config', 'w' do |f| f.write after end # I miss ruby1.9
+else
+  puts "\e[31mHrm. Nothing to do. (?)\e[0m"
+end
+system 'grv'
