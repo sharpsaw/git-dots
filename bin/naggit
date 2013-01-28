@@ -1,0 +1,36 @@
+#!/usr/bin/env ruby
+## Nag the user to put the given dir under version control
+def nag target
+  unless File.exists? target
+    puts "#{target} doesn't exist, and no parent has a .git/. #$me quitting."
+    exit 2
+  end
+
+  cmd="(cd '#{target}' && git init && git add . && git ci -m 'Initial Import')"
+  puts <<EOT
+\e[33m#{target} not under git control\e[0m. Consider running:
+
+  \e[32m#{cmd}\e[0m
+
+Hit enter to continue anyway, ^c to cancel,
+  or \e[32my\e[0m to run that command, now.
+EOT
+  answer = $stdin.readline.chomp.downcase
+  if 'y' == answer
+    puts "Good choice."
+    exit 3 unless system cmd
+  end
+end
+
+def has_dotgit_in_ancestry? path
+  cur = File.expand_path path
+  loop do
+    return true if Dir.exists? cur+'/.git'
+    return false if File.identical? '/', cur
+    cur = File.absolute_path cur+'/..'
+  end
+end
+
+target = ARGV[0] or fail "No arg provided."
+$me = File.basename $0
+nag target unless has_dotgit_in_ancestry? target
