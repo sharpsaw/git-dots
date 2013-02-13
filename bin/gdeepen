@@ -1,2 +1,3 @@
 #!/bin/sh -xe
+git --quiet submodule update --init
 git fetch --quiet --depth 99999999
