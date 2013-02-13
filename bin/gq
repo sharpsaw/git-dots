@@ -1,9 +1,1 @@
-#!/bin/bash -e
-## My primary "git status" command — is 'Q'uieter than the others. Is even quieter when redirecting, e.g.: vim $(gq)
-if [ -t 1 ]; then
-    gdirty || true
-    git status -s "$@"
-else
-    git status --porcelain "$@" | cut -b4-
-fi
-git diff --exit-code >&-
+echo Renamed: bin/gq -\> gs

@@ -1,2 +1,1 @@
-#!/bin/sh -x
-gcia "$@" && git push
+echo Renamed: bin/gciap -\> bin/gcap

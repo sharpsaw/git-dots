@@ -1,2 +1,1 @@
-#!/bin/sh -x
-ga. && gcimp "$@"
+echo Renamed: bin/ga.cimp -\> bin/ga.cmp

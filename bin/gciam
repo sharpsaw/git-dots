@@ -1,6 +1,1 @@
-#!/bin/sh
-## git commit -a -m
-gst; gd
-MSG="`_git-dots_read-msg "$@"`"
-set -x
-git commit -a -m "$MSG"
+echo Renamed: bin/gciam -\> bin/gcam

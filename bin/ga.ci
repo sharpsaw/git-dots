@@ -1,2 +1,1 @@
-#!/bin/sh -x
-ga. && gci "$@"
+echo Renamed: bin/ga.ci -\> bin/ga.c

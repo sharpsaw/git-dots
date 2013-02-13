@@ -1,0 +1,7 @@
+#!/bin/sh -e
+## git commit -a -m "$@" && git push
+gstq
+gd # Hrm. Do we also want a gdc?
+MSG="`_git-dots_read-msg "$@"`"
+set -x
+git commit -a -m "$MSG" && git push

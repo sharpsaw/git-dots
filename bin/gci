@@ -1,2 +1,2 @@
-#!/bin/sh -x
-git commit -v "$@"
+#!/bin/sh -xe
+git commit -v --interactive "$@"

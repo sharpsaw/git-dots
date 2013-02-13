@@ -1,2 +1,1 @@
-#!/bin/sh -x
-git commit -v -a "$@"
+echo Renamed: bin/gcia -\> bin/gca

@@ -1,2 +1,2 @@
 #!/bin/sh -x
-git cherry-pick -x "$@"
+gci "$@" && git push

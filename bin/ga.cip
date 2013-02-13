@@ -1,2 +1,1 @@
-#!/bin/sh -x
-ga. && gcip "$@"
+echo Renamed: bin/ga.cip -\> bin/ga.cp

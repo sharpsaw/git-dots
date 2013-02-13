@@ -1,2 +1,1 @@
-#!/bin/sh
-gcim "$@" && git push
+echo Renamed: bin/gcimp -\> bin/gcmp

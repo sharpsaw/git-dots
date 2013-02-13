@@ -1,0 +1,3 @@
+#!/bin/bash -xe
+## Edit all changed files. (vim tip: can pass -o or afterwards do :sba)
+${VISUAL:-${EDITOR:-vim}} $(git status --porcelain | cut -b4-) "$@"
