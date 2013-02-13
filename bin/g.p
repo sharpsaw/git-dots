@@ -1,5 +1,5 @@
 #!/bin/sh -e
-## More aggressive than `gciamp` - does a `git add .` first.
+## More aggressive than `gcamp` - does a `git add .` first.
 ga.
 gstq
 gdc

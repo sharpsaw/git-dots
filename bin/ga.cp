@@ -1,2 +1,2 @@
 #!/bin/sh -x
-ga. && gcip "$@"
+ga. && gcp "$@"

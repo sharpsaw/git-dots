@@ -1,4 +1,4 @@
-#!/bin/sh -xe
+#!/bin/sh -e
 ## The 'ls' of git, the nervous tick, the home base. (Bonus: Gets even quieter when redirecting.)
 if [ -t 1 ]; then
     gdirty || true

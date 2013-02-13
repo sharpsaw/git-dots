@@ -1,2 +1,2 @@
 #!/bin/sh -xe
-ga "$@" && gci
+ga "$@" && gc
