@@ -1,3 +1,5 @@
 #!/bin/bash -e
 ## List commits that need to be merged or pushed.
-git rev-parse @{u} &>/dev/null && git rev-list --left-right @{u}...HEAD
+git rev-parse @{u} &>/dev/null
+git rev-list --left-right --pretty=oneline @{u}...HEAD "$@"
+# VOTE: what about --boundary for ^
