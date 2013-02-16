@@ -1,0 +1,5 @@
+#!/bin/sh -x
+git push origin --all "$@" && git push origin --tags
+# Thanks to:
+# https://raw.github.com/robbyrussell/oh-my-zsh/master/plugins/git/git.plugin.zsh
+
