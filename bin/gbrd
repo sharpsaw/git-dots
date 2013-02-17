@@ -2,7 +2,7 @@
 ## List branches sorted by date
 
 # Note: I'm not sure why this trims trailing space. The original did, so I do.
-branch_names() { git branch --list | sed 's/..\(\S*\).*/\1/'; }
+branch_names() { git branch --list | perl -pe 's/..\(\S*\).*/\1/'; }
 
 show_date_for() { git log -1 --pretty='%Cgreen%ci %Cblue(%cr)%Creset %d' $1; }
 
