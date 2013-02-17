@@ -1,2 +1,2 @@
-#!/bin/sh -xe
-git reset HEAD "$@"
+#!/bin/sh -x
+git reset --hard "${@:-HEAD}"

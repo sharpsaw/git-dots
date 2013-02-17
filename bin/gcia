@@ -1,1 +1,1 @@
-echo Renamed: bin/gcia -\> bin/gca
+git commit -v -a "$@"
