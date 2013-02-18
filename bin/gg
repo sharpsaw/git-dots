@@ -1,2 +1,2 @@
 #!/bin/sh -x
-git ls-files | grep "$@"
+git grep "$@"
