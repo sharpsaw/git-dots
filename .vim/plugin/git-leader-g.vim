@@ -1,10 +1,13 @@
 " Remember that <leader> is \ by default, but it's pretty smart to alias it
 " like:  map <space> <leader> so these become like: <space>gs
 
-" Whole-tree stuff:
-map <Leader>gD :!gitdiff<cr>
-map <Leader>gbc :!gitbitcommit<cr>
-map <Leader>gp :!git push<cr>
+map <space>gs :Gstatus<cr>
+map <Leader>gd :Gdiff<cr>
+map <Leader>gbl :Gblame<cr>
+map <Leader>gbr :Gbrowse<cr>
+map <Leader>gl :Glog<cr>
+map <Leader>gc :Gcommit<cr>
+map <Leader>ga :!git add %<cr>
 
 " TODO
 " " Word-under-cursor stuff:
