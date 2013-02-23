@@ -1,11 +1,4 @@
 #!/bin/bash -e
 ## List commits that need to be merged or pushed.
 git rev-parse @{u} &>/dev/null
-# VOTE:
-# add --boundary to this? It causes the last commit to show, which noises up
-# 'gs' but it's also kind of handy:
-git rev-list --left-right --pretty=oneline --boundary @{u}...HEAD "$@"
-# rking says: Unsure, needs experimentation
-# ingy says: ...?
-# joofsh says: ...?
-# :ETOV
+git rev-list --left-right --pretty=oneline @{u}...HEAD "$@"
