@@ -5,7 +5,7 @@ PROMPT_DIR_COLOR=${PROMPT_DIR_COLOR:-64}
 autoload -U vcs_info
 zstyle ':vcs_info:*' enable git hg bzr svn
 zstyle ':vcs_info:(hg*|git*):*' check-for-changes true
-zstyle ':vcs_info:*' formats "%{%F{42}%}%b %{%F{5}%}%c%u "
+zstyle ':vcs_info:*' formats "%{%F{88}%}┄%{%F{130}%}┅❰ %{%F{202}%}%b %{%F{5}%}%c%u %{%F{130}%}❱┅%{%F{88}%}┄"
 zstyle ':vcs_info:*' branchformat '%b-%r'
 zstyle ':vcs_info:git*:*' stagedstr "%{%F{2}%}A%{%}"
 zstyle ':vcs_info:git*:*' unstagedstr "%{%F{2}%}M%{%}"
