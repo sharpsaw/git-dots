@@ -21,11 +21,9 @@ zstyle ':vcs_info:*' formats "%{%F{$VCS_SIGIL_COLOR}%}$VCS_SIGIL%{%F{$VCS_BRANCH
 zstyle ':vcs_info:*' branchformat '%b-%r'
 zstyle ':vcs_info:git*:*' stagedstr "%{%F{$VCS_STAGED_COLOR}%}$VCS_STAGED_SIGIL%{%}"
 zstyle ':vcs_info:git*:*' unstagedstr "%{%F{$VCS_UNSTAGED_COLOR}%}$VCS_UNSTAGED_SIGIL%{%}"
-zstyle ':vcs_info:git+post-backend:*' hooks tone-down-master
 zstyle ':vcs_info:git+set-message:*' hooks check-untracked
 # zstyle ':vcs_info:*+*:*' debug true
 
-+vi-tone-down-master() { hook_com[branch]=${hook_com[branch]/#%master/ﬆ} }
 git-ls-others() { git ls-files --others --exclude-standard 2>&- }
 +vi-check-untracked() {
     [[ -n $(git-ls-others) ]] || return
@@ -35,7 +33,7 @@ git-ls-others() { git ls-files --others --exclude-standard 2>&- }
 
 precmd() vcs_info
 setopt promptsubst
-export PROMPT='${vcs_info_msg_0_}%{%F{$HOST_COLOR}%}%B%#%b%{${reset_color}%} '
+export PROMPT="\${vcs_info_msg_0_}%{%F{$HOST_COLOR}%}%B%#%b%{$reset_color%} "
 export RPROMPT=\
-'%{%F{$USER_COLOR}%}%n%{${reset_color}%}@%{%F{$HOST_COLOR}%}%m%b:%{%F{$PROMPT_DIR_COLOR}%}%B%~'
+"%{%F{$USER_COLOR}%}%n%{${reset_color}%}@%{%F{$HOST_COLOR}%}%m%b:%{%F{$PROMPT_DIR_COLOR}%}%B%~"
 # vim:ft=zsh
