@@ -1,21 +1,26 @@
 HOST_COLOR=${HOST_COLOR:-31}
 USER_COLOR=${USER_COLOR:-24}
 PROMPT_DIR_COLOR=${PROMPT_DIR_COLOR:-64}
+VCS_FANCY_COLOR_1=${VCS_FANCY_COLOR_1:-$HOST_COLOR}
+VCS_FANCY_COLOR_2=${VCS_FANCY_COLOR_2:-$USER_COLOR}
+
+VCS_FANCY_PREFIX="%{%F{$VCS_FANCY_COLOR_1}%}∇%{%F{$VCS_FANCY_COLOR_2}%}┅❰ "
+VCS_FANCY_SUFFIX=" %{%F{$VCS_FANCY_COLOR_2}%}❱┅%{%F{$VCS_FANCY_COLOR_1}%}┄"
 
 autoload -U vcs_info
 zstyle ':vcs_info:*' enable git hg bzr svn
 zstyle ':vcs_info:(hg*|git*):*' check-for-changes true
-zstyle ':vcs_info:*' formats "%{%F{88}%}┄%{%F{130}%}┅❰ %{%F{202}%}%b %{%F{5}%}%c%u %{%F{130}%}❱┅%{%F{88}%}┄"
+zstyle ':vcs_info:*' formats "$VCS_FANCY_PREFIX%{%F{202}%}%b %{%F{5}%}%c%u $VCS_FANCY_SUFFIX"
 zstyle ':vcs_info:*' branchformat '%b-%r'
 zstyle ':vcs_info:git*:*' stagedstr "%{%F{2}%}A%{%}"
-zstyle ':vcs_info:git*:*' unstagedstr "%{%F{2}%}M%{%}"
+zstyle ':vcs_info:git*:*' unstagedstr "%{%F{1}%}M%{%}"
 zstyle ':vcs_info:git+set-message:*' hooks git-check-untracked
 # zstyle ':vcs_info:*+*:*' debug true
 
 +vi-git-check-untracked() {
     local x
     [[ -n $(git ls-files --others --exclude-standard 2>&-) ]] && x=\?
-    hook_com[unstaged]="${hook_com[unstaged]}%{%F{196}%}$x `git log -1 --oneline --color`"
+    hook_com[unstaged]="${hook_com[unstaged]}%{%F{1}%}$x `git log -1 --oneline --color`"
 }
 
 precmd() vcs_info
