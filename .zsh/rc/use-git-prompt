@@ -1,39 +1,27 @@
-# You can assign these before or after this file:
 HOST_COLOR=${HOST_COLOR:-31}
 USER_COLOR=${USER_COLOR:-24}
 PROMPT_DIR_COLOR=${PROMPT_DIR_COLOR:-64}
-VCS_UNTRACKED_COLOR=${VCS_UNTRACKED_COLOR:-82}
-VCS_UNTRACKED_SIGIL=${VCS_UNTRACKED_SIGIL:-…}
-
-# These have to happen before (they get interpolated):
-VCS_SIGIL=${VCS_SIGIL:-∇}
-VCS_SIGIL_COLOR=${VCS_SIGIL_COLOR:-42}
-VCS_BRANCH_COLOR=${VCS_BRANCH_COLOR:-26}
-VCS_STAGED_SIGIL=${VCS_STAGED_SIGIL:-●}
-VCS_STAGED_COLOR=${VCS_UNSTAGED_COLOR:-96}
-VCS_UNSTAGED_COLOR=${VCS_UNSTAGED_COLOR:-196}
-VCS_UNSTAGED_SIGIL=${VCS_UNSTAGED_SIGIL:-✚}
 
 autoload -U vcs_info
 zstyle ':vcs_info:*' enable git hg bzr svn
 zstyle ':vcs_info:(hg*|git*):*' check-for-changes true
-zstyle ':vcs_info:*' formats "%{%F{$VCS_SIGIL_COLOR}%}$VCS_SIGIL%{%F{$VCS_BRANCH_COLOR}%}%b%u%c"
+zstyle ':vcs_info:*' formats "%{%F{42}%}%b %{%F{5}%}%c%u "
 zstyle ':vcs_info:*' branchformat '%b-%r'
-zstyle ':vcs_info:git*:*' stagedstr "%{%F{$VCS_STAGED_COLOR}%}$VCS_STAGED_SIGIL%{%}"
-zstyle ':vcs_info:git*:*' unstagedstr "%{%F{$VCS_UNSTAGED_COLOR}%}$VCS_UNSTAGED_SIGIL%{%}"
-zstyle ':vcs_info:git+set-message:*' hooks check-untracked
+zstyle ':vcs_info:git*:*' stagedstr "%{%F{2}%}A%{%}"
+zstyle ':vcs_info:git*:*' unstagedstr "%{%F{2}%}M%{%}"
+zstyle ':vcs_info:git+set-message:*' hooks git-check-untracked
 # zstyle ':vcs_info:*+*:*' debug true
 
-git-ls-others() { git ls-files --others --exclude-standard 2>&- }
-+vi-check-untracked() {
-    [[ -n $(git-ls-others) ]] || return
-    local count=$(git-ls-others | wc -l | sed 's/ //g')
-    hook_com[unstaged]="${hook_com[unstaged]}%{%F{$VCS_UNTRACKED_COLOR}%}${VCS_UNTRACKED_SIGIL}$count"
++vi-git-check-untracked() {
+    local x
+    [[ -n $(git ls-files --others --exclude-standard 2>&-) ]] && x=\?
+    hook_com[unstaged]="${hook_com[unstaged]}%{%F{196}%}$x `git log -1 --oneline --color`"
 }
 
 precmd() vcs_info
 setopt promptsubst
-export PROMPT="\${vcs_info_msg_0_}%{%F{$HOST_COLOR}%}%B%#%b%{$reset_color%} "
+export PROMPT="\${vcs_info_msg_0_}
+%{%F{$HOST_COLOR}%}%B%#%b%{$reset_color%} "
 export RPROMPT=\
 "%{%F{$USER_COLOR}%}%n%{${reset_color}%}@%{%F{$HOST_COLOR}%}%m%b:%{%F{$PROMPT_DIR_COLOR}%}%B%~"
 # vim:ft=zsh
