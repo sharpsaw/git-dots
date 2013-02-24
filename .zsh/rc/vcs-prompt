@@ -10,7 +10,8 @@ VCS_FANCY_SUFFIX=" %{%F{$VCS_FANCY_COLOR_2}%}❱┅%{%F{$VCS_FANCY_COLOR_1}%}┄
 autoload -U vcs_info
 zstyle ':vcs_info:*' enable git hg bzr svn
 zstyle ':vcs_info:(hg*|git*):*' check-for-changes true
-zstyle ':vcs_info:*' formats "$VCS_FANCY_PREFIX%{%F{202}%}%b %{%F{5}%}%c%u $VCS_FANCY_SUFFIX"
+zstyle ':vcs_info:*' formats "$VCS_FANCY_PREFIX%{%F{202}%}%b %{%F{5}%}%c%u $VCS_FANCY_SUFFIX
+"
 zstyle ':vcs_info:*' branchformat '%b-%r'
 zstyle ':vcs_info:git*:*' stagedstr "%{%F{2}%}A%{%}"
 zstyle ':vcs_info:git*:*' unstagedstr "%{%F{1}%}M%{%}"
@@ -25,8 +26,7 @@ zstyle ':vcs_info:git+set-message:*' hooks git-check-untracked
 
 precmd() vcs_info
 setopt promptsubst
-export PROMPT="\${vcs_info_msg_0_}
-%{%F{$HOST_COLOR}%}%B%#%b%{$reset_color%} "
+export PROMPT="\${vcs_info_msg_0_}%{%F{$HOST_COLOR}%}%B%#%b%{$reset_color%} "
 export RPROMPT=\
 "%{%F{$USER_COLOR}%}%n%{${reset_color}%}@%{%F{$HOST_COLOR}%}%m%b:%{%F{$PROMPT_DIR_COLOR}%}%B%~"
 # vim:ft=zsh
