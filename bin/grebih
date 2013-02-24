@@ -1,0 +1,3 @@
+#!/bin/sh -xe
+offset=$1; shift
+git rebase -i HEAD~$offset "$@"
