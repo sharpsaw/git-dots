@@ -27,6 +27,7 @@ read
 sudo mkdir -p $ssh_dir
 sudo touch $authorized_keys
 sudo chmod 600 $authorized_keys
+sudo chown -R $unix_user $their_home
 (sudo cat $authorized_keys $tmp | sort | uniq; echo) | sudo tee $authorized_keys
 echo "sudo $EDITOR $authorized_keys # if you don't like ^ that"
 rm $tmp
