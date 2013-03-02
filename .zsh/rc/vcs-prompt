@@ -6,11 +6,13 @@ VCS_FANCY_COLOR_2=${VCS_FANCY_COLOR_2:-$USER_COLOR}
 
 VCS_FANCY_PREFIX="%{%F{$VCS_FANCY_COLOR_1}%}∇%{%F{$VCS_FANCY_COLOR_2}%}┅❰ "
 VCS_FANCY_SUFFIX=" %{%F{$VCS_FANCY_COLOR_2}%}❱┅%{%F{$VCS_FANCY_COLOR_1}%}┄"
+VCS_BRANCH_COLOR=${VCS_BRANCH_COLOR:-242}
+VCS_DESC_COLOR=${VCS_DESC_COLOR:-239}
 
 autoload -U vcs_info
 zstyle ':vcs_info:*' enable git hg bzr svn
 zstyle ':vcs_info:(hg*|git*):*' check-for-changes true
-zstyle ':vcs_info:*' formats "$VCS_FANCY_PREFIX%{%F{202}%}%b %{%F{5}%}%c%u $VCS_FANCY_SUFFIX
+zstyle ':vcs_info:*' formats "$VCS_FANCY_PREFIX%{%F{$VCS_BRANCH_COLOR}%}%b %{%F{$VCS_FANCY_COLOR_1}%}%c%u $VCS_FANCY_SUFFIX
 "
 zstyle ':vcs_info:*' branchformat '%b-%r'
 zstyle ':vcs_info:git*:*' stagedstr "%{%F{2}%}A%{%}"
@@ -21,7 +23,9 @@ zstyle ':vcs_info:git+set-message:*' hooks git-check-untracked
 +vi-git-check-untracked() {
     local x
     [[ -n $(git ls-files --others --exclude-standard 2>&-) ]] && x=\?
-    hook_com[unstaged]="${hook_com[unstaged]}%{%F{1}%}$x `git log -1 --oneline --color`"
+    local desc
+    desc="`git log -1 --pretty=format:'%s | %ar | %h'`"
+    hook_com[unstaged]="${hook_com[unstaged]}%{%F{1}%}$x %{%F{$VCS_DESC_COLOR}%}$desc"
 }
 
 precmd() vcs_info
