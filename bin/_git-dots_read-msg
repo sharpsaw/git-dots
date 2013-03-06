@@ -3,8 +3,12 @@
 if [ -n "$*" ]; then
     msg="$@"
 else
-    printf "% $((50+17))s\n" 'Linus Line ends here ↓' > /dev/tty
-    printf 'Commit message: ' > /dev/tty
-    read msg
+    cat <<EOT > /dev/tty
+                  ╭────────────────────────────╮
+              ╭──═╛ Commit away, but remember… ╘═─╮
+╭──────═══════╛_The_Linus-Approved_Zone_ends_here→│
+EOT
+#12345678901234567890123456789012345678901234567890
+    read -e msg
 fi
 echo "$msg"
