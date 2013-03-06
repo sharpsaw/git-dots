@@ -9,6 +9,9 @@ def run cmd
     warn "This ☝ abended. (hit ^c to stop or Enter to continue)"
     $stdin.readline
   end
+rescue Interrupt
+  warn "\nOK, stopping."
+  exit 1
 end
 run %w(git add .)
 `git status --porcelain`.split("\n").each do |line|
