@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+count  = (ARGV.shift || 20).to_i
+list   = `git for-each-ref \
+           --count=#{count} \
+           --sort=-committerdate \
+           --format='%(committerdate:short)|%(refname:short)' \
+           refs/heads/`.split("\n").map { |l| l.split("|", 2) }
+merged = `git branch --merged | cut -c3-`.split("\n")
+
+list.each do |date, name|
+  puts " #{merged.include?(name) ? '*' : ' '} #{date} #{name}"
+end
