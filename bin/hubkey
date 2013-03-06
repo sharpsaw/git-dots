@@ -25,6 +25,7 @@ echo
 echo "Does that look good?  ^c for no, Enter for yes."
 read
 sudo mkdir -p $ssh_dir
+sudo chown 700 $ssh_dir
 sudo touch $authorized_keys
 sudo chmod 600 $authorized_keys
 sudo chown -R $unix_user $their_home
