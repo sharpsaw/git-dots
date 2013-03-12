@@ -1,0 +1,5 @@
+#!/bin/sh -xe
+git add .
+git diff --cached -w
+read
+git commit -m "[WHITESPACE-ONLY]"
