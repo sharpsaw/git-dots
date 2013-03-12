@@ -1,0 +1,13 @@
+#!/bin/bash -e
+## git commit an ExtractMethod
+method_name=$1; shift || true
+if [ -z "$method_name" ]; then
+    read -p 'Method name: ' -e method_name
+fi
+echo $method_name
+git add .
+git diff --cached
+message="ExtractMethod: #$method_name"
+echo "OK to commit '$message' ? (Enter for yes, ^c for no)"
+read
+git commit -m "$message"
