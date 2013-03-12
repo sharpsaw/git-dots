@@ -1,0 +1,3 @@
+#!/bin/sh -xe
+## Like the commit of g. but only a pause: is 'git add .'
+git add .
