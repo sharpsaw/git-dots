@@ -12,7 +12,7 @@ VCS_DESC_COLOR=${VCS_DESC_COLOR:-239}
 autoload -U vcs_info
 zstyle ':vcs_info:*' enable git hg bzr svn
 zstyle ':vcs_info:(hg*|git*):*' check-for-changes true
-zstyle ':vcs_info:*' formats "$VCS_FANCY_PREFIX%{%F{$VCS_BRANCH_COLOR}%}%b %{%F{$VCS_FANCY_COLOR_1}%}%c%u $VCS_FANCY_SUFFIX
+zstyle ':vcs_info:*' formats "$VCS_FANCY_PREFIX%{%F{$VCS_BRANCH_COLOR}%}%b %{%F{$VCS_FANCY_COLOR_1}%}%c%u$VCS_FANCY_SUFFIX
 "
 zstyle ':vcs_info:*' branchformat '%b-%r'
 zstyle ':vcs_info:git*:*' stagedstr "%{%F{2}%}A%{%}"
