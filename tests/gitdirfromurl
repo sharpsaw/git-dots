@@ -2,10 +2,10 @@
 assert_hihi() {
     actual="`bin/gitdirfromurl $@`"
     if [ hihi != "$actual" ]; then
-        echo -e "\n\e[31m$@ became $actual\e[0m"
+        printf -e "\n\e[31m$@ became $actual\e[0m\n"
         exit 2
     else
-        echo -ne "\e[32m.\e[0m"
+        printf "\e[32m.\e[0m"
     fi
 }
 assert_hihi git@github.com:rking/hihi
@@ -14,5 +14,6 @@ assert_hihi https://github.com/rking/hihi
 assert_hihi https://github.com/rking/hihi
 assert_hihi git@secrethost:hihi
 assert_hihi /var/stuff/hihi
+assert_hihi rking/hihi
 assert_hihi git@github.com:rking/override_me hihi
-echo -e "\nL'champignon!!"
+echo; echo "L'champignon!!"
