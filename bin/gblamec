@@ -1,0 +1,9 @@
+#!/bin/sh -e
+## Show git blame, with commit subjects as comments
+git blame -s "$@" | ruby -ne '
+$_ =~ /^(\S+) +\d+\)(.+)/
+content = $2
+comment = `git show --summary --oneline #$1`
+comment.gsub! /.*mode \d{6} .*\n/, ""
+puts "#{content}\t# #{comment}"
+'
