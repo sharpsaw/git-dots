@@ -1,56 +1,56 @@
 [push]
-    default = current
+	default = current
 
 # Note: These are a merge from several different people's preferences.
 # At some point we should have a pow-wow and determien which are good and
 # which should go.  I (☈) mostly only use the others from git-dots/bin/*,
 # because they're one space briefer.
 [alias]
-    b = branch
-    br = branch
-    c = commit
-    changes=diff --name-status -r
-    ci = commit -v
-    co = checkout
-    dc = diff --cached
-    df = diff
-    di = diff
-    diffstat=diff --stat -r
-    # Show files ignored by git:
-    ign = ls-files -o -i --exclude-standard
-    lc = log ORIG_HEAD.. --stat --no-merges --pretty=format:'%Cred%h%Creset %Cgreen(%cr) %C(bold blue)<%an>:\n%C(yellow)%d%Creset %s %Creset\n'
-    lg = log -p
-    lp = log -p
-    lol = log --graph --decorate --pretty=oneline --abbrev-commit
-    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-    ls = ls-files
-    s = status
-    st = status
-    w = whatchanged
+	b = branch
+	br = branch
+	c = commit
+	changes=diff --name-status -r
+	ci = commit -v
+	co = checkout
+	dc = diff --cached
+	df = diff
+	di = diff
+	diffstat=diff --stat -r
+	# Show files ignored by git:
+	ign = ls-files -o -i --exclude-standard
+	lc = log ORIG_HEAD.. --stat --no-merges --pretty=format:'%Cred%h%Creset %Cgreen(%cr) %C(bold blue)<%an>:\n%C(yellow)%d%Creset %s %Creset\n'
+	lg = log -p
+	lp = log -p
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	ls = ls-files
+	s = status
+	st = status
+	w = whatchanged
 
 [color]
-    ui = auto
-    diff = auto
-    status = auto
-    branch = auto
-    interactive = auto
-    pager = true
+	ui = auto
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	pager = true
 
 [color "diff"]
-    new = green
-    old = yellow
+	new = green
+	old = yellow
 
 [core]
-    excludesfile = ~/.gitignore_global
-    # some systems set $LESS, which causes git to refuse to override.
-    pager = less -FRX
+	excludesfile = ~/.gitignore_global
+	# some systems set $LESS, which causes git to refuse to override.
+	pager = less -FRX
 
 [merge]
-    tool = vimdiff
+	tool = vimdiff
 [diff]
-    tool = vimdiff
+	tool = vimdiff
 [advice]
-    statusHints = false
+	statusHints = false
 [interactive]
 	singlekey = true
