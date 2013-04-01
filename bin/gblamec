@@ -1,9 +1,14 @@
 #!/bin/sh -e
 ## Show git blame, with commit subjects as comments
 git blame -s "$@" | ruby -ne '
-$_ =~ /^(\S+) +\d+\)(.+)/
+$_ =~ /^([[:xdigit:]]+) .*\d+\) (.+)/ or warn "Nonmatch: #$_"
 content = $2
-comment = `git show --summary --oneline #$1`
+comment =
+ if $1
+    `git show --summary --oneline #$1`
+  else
+    ""
+  end
 comment.gsub! /.*mode \d{6} .*\n/, ""
 puts "#{content}\t# #{comment}"
 '
