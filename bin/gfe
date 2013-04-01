@@ -1,2 +1,3 @@
 #!/bin/sh -xe
-git fetch "$@"
+git fetch --prune "$@"
+# (--prune removes tracking branches whose remotes have been deleted)
