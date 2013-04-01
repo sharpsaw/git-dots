@@ -24,7 +24,7 @@ zstyle ':vcs_info:git+set-message:*' hooks git-check-untracked
     local x
     [[ -n $(git ls-files --others --exclude-standard 2>&-) ]] && x=\?
     local desc
-    desc="`git log -1 --pretty=format:'%s | %ar | %h'`"
+    desc="`git log -1 --pretty=format:'%s | %ar | %h' 2>&-`"
     hook_com[unstaged]="${hook_com[unstaged]}%{%F{1}%}$x %{%F{$VCS_DESC_COLOR}%}$desc"
 }
 
