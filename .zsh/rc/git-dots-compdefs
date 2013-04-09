@@ -27,6 +27,7 @@ alias gdc='git diff --cached'
 
 compdef _git gdcv=git-diff
 #compdef _git gdeepen=git-
+compdef _git gdu=git-diff
 compdef _git gdv=git-diff
 #compdef _git gitbitcommit=git-
 compdef _git gitblame=git-blame
