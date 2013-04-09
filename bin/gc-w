@@ -1,5 +1,4 @@
 #!/bin/sh -xe
 git add .
-git diff --cached -w
-read
+git diff --cached -w --exit-code
 git commit -m "[WHITESPACE-ONLY]"
