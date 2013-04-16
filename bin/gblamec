@@ -1,6 +1,6 @@
 #!/bin/sh -e
 ## Show git blame, with commit subjects as comments
-git blame -s "$@" | ruby -ne '
+git blame -s --follow "$@" | ruby -ne '
 $_ =~ /^([[:xdigit:]]+) .*\d+\) (.+)/ or warn "Nonmatch: #$_"
 content = $2
 comment =
