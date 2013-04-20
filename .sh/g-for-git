@@ -1,0 +1,6 @@
+# `g` is a shortcut for git, it defaults to `git s` (status) if no argument is given.
+g() {
+  local cmd=${1-st -s}
+  [[ $# > 0 ]] && shift
+  git $cmd $@
+}
