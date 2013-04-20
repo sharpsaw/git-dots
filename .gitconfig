@@ -6,6 +6,8 @@
 # which should go.  I (☈) mostly only use the others from git-dots/bin/*,
 # because they're one space briefer.
 [alias]
+        aa = add --all
+        amend = commit --amend
 	b = branch
 	br = branch
 	c = commit
@@ -16,16 +18,23 @@
 	df = diff
 	di = diff
 	diffstat=diff --stat -r
-	# Show files ignored by git:
+        head = !git l -1
+        h = !git head
 	ign = ls-files -o -i --exclude-standard
+        la = !git l --all
 	lc = log ORIG_HEAD.. --stat --no-merges --pretty=format:'%Cred%h%Creset %Cgreen(%cr) %C(bold blue)<%an>:\n%C(yellow)%d%Creset %s %Creset\n'
-	lg = log -p
-	lp = log -p
-	lol = log --graph --decorate --pretty=oneline --abbrev-commit
-	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+        l = "!git_pretty_log"
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	lg = log -p
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lp = log -p
 	ls = ls-files
-	s = status
+        pom = push origin master
+        pullff = pull --ff-only
+        ra = !git r --all
+        r = !git l -30
+	s = status -s
 	st = status
 	w = whatchanged
 
