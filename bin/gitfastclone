@@ -3,7 +3,6 @@
 if type hub 2>/dev/null; then
     git=hub
 else
-    echo "'hub' command missing. Functionality degraded."
     git=git
 fi
 (
