@@ -1,7 +1,7 @@
 " Remember that <leader> is \ by default, but it's pretty smart to alias it
 " like:  map <space> <leader> so these become like: <space>gs
 
-map <space>gs :Gstatus<cr>
+map <Leader>gs :Gstatus<cr>
 map <Leader>gd :Gdiff<cr>
 map <Leader>gbl :Gblame<cr>
 map <Leader>gbr :Gbrowse<cr>
