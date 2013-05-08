@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+# git fetch, with review of incoming changes
+# Ref: https://github.com/git/git/blob/master/builtin/fetch.c
+require 'ostruct'
+def parse str
+  str.gsub! /^\S.*\n/, ''
+  str.split("\n").map do |e|
+    /^ +\+? +(?<range>\S+) +(?<local_branch>) +-> (
+    OpenStruct.new(
+      branch: branch,
+      full: e,
+    )
+  end
+end
+
+example_output = <<EOT
+remote: Counting objects: 584, done.
+...n lines of foo...
+Resolving deltas: 100% (373/373), completed with 48 local objects.
+From asdfrepo@asdf.com:asdf/asdf.git
+ + 123...a12 asdf       -> origin/asdf  (forced update)
+   124..a13  goofus/fdsa -> origin/goofus/fdsa
+   125..a14  master     -> origin/master
+EOT
+
+updates = parse example_output
+fail "Unexpected # of results: #{updates.size}" unless 3 == updates.size
+fail updates.inspect unless updates.first.full.match /\+.*forced/
+# not sure how to use this range correctly. TODO
+# fail updates.inspect unless '123...a12' == updates.first.range
+fail updates.inspect unless 'origin/asdf' == updates.first.branch
