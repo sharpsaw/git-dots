@@ -53,6 +53,7 @@ jjV}k!bin-docs
 * `gcom` ⇒ `git checkout master <args>`
 * `gcp` ⇒ `gci <args> && git push`
 * `gd` ⇒ `git diff <args>`
+* `gdt` ⇒ `git difftool <args>`
 * `gdc` ⇒ Show staging diffs (== gd --cached)
 * `gdeepen` ⇒ `git fetch --quiet --depth 99999999`
 * `gdirty` ⇒ List commits that need to be merged or pushed.
